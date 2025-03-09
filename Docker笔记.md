@@ -91,3 +91,55 @@ systemctl enable docker
 docker ps
 ```
 
+### 配置镜像加速
+
+```shell
+# 创建目录
+mkdir -p /etc/docker
+
+# 复制内容
+tee /etc/docker/daemon.json <<-'EOF'
+{
+    "registry-mirrors": [
+        "http://hub-mirror.c.163.com",
+        "https://mirrors.tuna.tsinghua.edu.cn",
+        "http://mirrors.sohu.com",
+        "https://ustc-edu-cn.mirror.aliyuncs.com",
+        "https://ccr.ccs.tencentyun.com",
+        "https://docker.m.daocloud.io",
+        "https://docker.awsl9527.cn"
+    ]
+}
+EOF
+
+# 重新加载配置
+systemctl daemon-reload
+
+# 重启Docker
+systemctl restart docker
+```
+
+# 部署MySQL
+
+```shell
+docker run -d \
+  --name mysql \
+  -p 3306:3306 \
+  -e TZ=Asia/Shanghai \
+  -e MYSQL_ROOT_PASSWORD=123 \
+  mysql
+```
+
+Docker会自动搜索并下载MySQL。
+
+> [!NOTE]
+>
+> 这里下载的不是安装包，而是**镜像。**镜像中不仅包含了MySQL本身，还包含了其运行所需要的环境、配置、系统级函数库。因此它在运行时就有自己独立的环境，就可以跨系统运行，也不需要手动再次配置环境了。这套独立运行的隔离环境我们称为**容器**
+
+Docker官方提供了一个专门管理、存储镜像的网站，并对外开放了镜像上传、下载的权利。
+
+> [!NOTE]
+>
+> 网址：[Docker Hub Container Image Library | App Containerization](https://hub.docker.com/)
+
+![image-20250309205128340](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250309205128340.png)
