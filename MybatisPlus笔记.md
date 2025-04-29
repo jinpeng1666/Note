@@ -26,15 +26,15 @@
 
 **mapper层**
 
-![image-20250305182251073](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250305182251073.png)
+![image-20250305182251073](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250305182251073.png)
 
 **service接口层**
 
-![image-20250305182339989](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250305182339989.png)
+![image-20250305182339989](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250305182339989.png)
 
 **service实现层**
 
-![image-20250305182431925](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250305182431925.png)
+![image-20250305182431925](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250305182431925.png)
 
 ### 常见注解
 
@@ -44,13 +44,13 @@
 >
 > [注解配置 | MyBatis-Plus](https://baomidou.com/reference/annotation/)
 
-![image-20250305172723137](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250305172723137.png)
+![image-20250305172723137](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250305172723137.png)
 
-![image-20250305183643179](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250305183643179.png)
+![image-20250305183643179](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250305183643179.png)
 
 **注意点**
 
-![image-20250305183612610](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250305183612610.png)
+![image-20250305183612610](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250305183612610.png)
 
 ### 常见配置
 
@@ -60,7 +60,7 @@
 >
 > [使用配置 | MyBatis-Plus](https://baomidou.com/reference/)
 
-![image-20250305184634891](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250305184634891.png)
+![image-20250305184634891](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250305184634891.png)
 
 # 持久层接口
 
@@ -72,9 +72,9 @@
 
 ### IService
 
-![](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250307103536800.png)
+![](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250307103536800.png)
 
-![](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250307103750607.png)
+![](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250307103750607.png)
 
 - 属于 **服务层（Service 层）**
 - 通常由 `Service` 接口继承，并由 `Service` 实现类实现
@@ -100,23 +100,23 @@
 
 **继承体系**
 
-![image-20250305185631069](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250305185631069.png)
+![image-20250305185631069](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250305185631069.png)
 
 **AbstractWrapper**
 
-![image-20250305185841930](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250305185841930.png)
+![image-20250305185841930](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250305185841930.png)
 
 这是一个抽象基类，提供了所有 Wrapper 类共有的方法和属性。它定义了条件构造的基本逻辑，包括字段（column）、值（value）、操作符（condition）等
 
 **QueryWrapper**
 
-![image-20250305185910423](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250305185910423.png)
+![image-20250305185910423](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250305185910423.png)
 
 专门用于构造查询条件，支持基本的等于、不等于、大于、小于等各种常见操作。它允许你以链式调用的方式添加多个查询条件，并且可以组合使用 `and` 和 `or` 逻辑
 
 **UpdateWrapper**
 
-![image-20250305185944636](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250305185944636.png)
+![image-20250305185944636](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250305185944636.png)
 
 用于构造更新条件，可以在更新数据时指定条件。与 QueryWrapper 类似，它也支持链式调用和逻辑组合。使用 UpdateWrapper 可以在不创建实体对象的情况下，直接设置更新字段和条件
 
@@ -130,33 +130,33 @@
 
 ### 示例
 
-![image-20250305190459654](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250305190459654.png)
+![image-20250305190459654](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250305190459654.png)
 
-![image-20250305191120054](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250305191120054.png)
+![image-20250305191120054](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250305191120054.png)
 
 **QueryWrapper**
 
-![image-20250305190553789](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250305190553789.png)
+![image-20250305190553789](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250305190553789.png)
 
 **UpdateWrapper**
 
-![image-20250305190920925](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250305190920925.png)
+![image-20250305190920925](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250305190920925.png)
 
 用`UpdateWrapper`应该也行（懒得改了......)
 
-![image-20250305191220026](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250305191220026.png)
+![image-20250305191220026](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250305191220026.png)
 
 **LambdaQueryWrapper**
 
-![image-20250305191633461](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250305191633461.png)
+![image-20250305191633461](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250305191633461.png)
 
 # 自定义SQL
 
 半自动，把条件构造器作为`mapper`方法的参数传给自定义的SQL语句
 
-![image-20250305192319001](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250305192319001.png)
+![image-20250305192319001](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250305192319001.png)
 
-![image-20250305192546897](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250305192546897.png)
+![image-20250305192546897](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250305192546897.png)
 
 # Chain
 
@@ -334,7 +334,7 @@ boolean isBatchUpdated = Db.updateBatchById(batchUpdateUsers);
 
 # JSON处理器
 
-![image-20250307165052309](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250307165052309.png)
+![image-20250307165052309](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250307165052309.png)
 
 # 分页插件
 
@@ -346,9 +346,9 @@ boolean isBatchUpdated = Db.updateBatchById(batchUpdateUsers);
 
 **配置**
 
-![image-20250307170037156](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250307170037156.png)
+![image-20250307170037156](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250307170037156.png)
 
-![image-20250307170056969](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250307170056969.png)
+![image-20250307170056969](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250307170056969.png)
 
-![image-20250307170126893](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250307170126893.png)
+![image-20250307170126893](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250307170126893.png)
 

@@ -10,21 +10,21 @@
 
 传统关系型数据库是结构化数据，每一张表都有严格的约束信息：字段名.字段数据类型.字段约束等等信息，插入的数据必须遵守这些约束：
 
-![image-20250423094955726](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250423094955726.png)
+![image-20250423094955726](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250423094955726.png)
 
 而NoSql则对数据库格式没有严格约束，往往形式松散，自由
 
 可以是键值型：
 
-![image-20250423095030509](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250423095030509.png)
+![image-20250423095030509](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250423095030509.png)
 
 也可以是文档型：
 
-![image-20250423095052506](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250423095052506.png)
+![image-20250423095052506](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250423095052506.png)
 
 甚至可以是图格式：
 
-![image-20250423095101429](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250423095101429.png)
+![image-20250423095101429](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250423095101429.png)
 
 
 
@@ -32,7 +32,7 @@
 
 传统数据库的表与表之间往往存在关联，例如外键：
 
-![image-20250423095129784](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250423095129784.png)
+![image-20250423095129784](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250423095129784.png)
 
 而非关系型数据库不存在关联关系，要维护关系要么靠代码中的业务逻辑，要么靠数据之间的耦合：
 
@@ -67,7 +67,7 @@
 
 而不同的非关系数据库查询语法差异极大，五花八门各种各样
 
-![image-20250423095316911](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250423095316911.png)
+![image-20250423095316911](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250423095316911.png)
 
 
 
@@ -81,7 +81,7 @@
 
 除了上述四点以外，在存储方式、扩展性、查询性能上关系型与非关系型也都有着显著差异，总结如下：
 
-![image-20250423095439079](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250423095439079.png)
+![image-20250423095439079](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250423095439079.png)
 
 - 存储方式
     - 关系型数据库基于磁盘进行存储，会有大量的磁盘IO，对性能有一定影响
@@ -127,7 +127,7 @@ yum install -y gcc tcl
 
 将Redis安装包上传到虚拟机的任意目录：
 
-![image-20250423095742921](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250423095742921.png)
+![image-20250423095742921](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250423095742921.png)
 
 解压缩：
 
@@ -151,7 +151,7 @@ make && make install
 
 默认的安装路径是在 `/usr/local/bin`目录下：
 
-![image-20250423095816216](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250423095816216.png)
+![image-20250423095816216](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250423095816216.png)
 
 该目录已经默认配置到环境变量，因此可以在任意目录下运行这些命令。其中：
 
@@ -181,7 +181,7 @@ redis-server
 
 如图：
 
-![image-20250423095909984](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250423095909984.png)
+![image-20250423095909984](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250423095909984.png)
 
 这种启动属于`前台启动`，会阻塞整个会话窗口，窗口关闭或者按下`CTRL + C`则Redis停止。不推荐使用。
 
@@ -323,7 +323,7 @@ redis-cli [options] [commonds]
 
 不指定commond时，会进入`redis-cli`的交互控制台：
 
-![image-20250423100114558](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250423100114558.png)
+![image-20250423100114558](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250423100114558.png)
 
 
 
@@ -339,7 +339,7 @@ redis-cli [options] [commonds]
 
 Redis是一个key-value的数据库，key一般是String类型，不过value的类型多种多样：
 
-![image-20250423104344544](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250423104344544.png)
+![image-20250423104344544](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250423104344544.png)
 
 
 
@@ -353,11 +353,11 @@ Redis没有类似MySQL中的Table的概念，我们该如何区分不同类型�
 
 Redis的key允许有多个单词形成层级结构，多个单词之间用':'隔开，格式如下：
 
-![image-20250423104734944](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250423104734944.png)
+![image-20250423104734944](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250423104734944.png)
 
 一旦我们向redis采用这样的方式存储，那么在可视化界面中，redis会以层级结构来进行存储，形成类似于这样的结构，更加方便Redis获取数据
 
-![image-20250423104812607](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250423104812607.png)
+![image-20250423104812607](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250423104812607.png)
 
 
 
@@ -373,7 +373,7 @@ Redis的key允许有多个单词形成层级结构，多个单词之间用':'隔
 
 通过help [command] 可以查看一个命令的具体用法，例如：
 
-![image-20250423104508923](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250423104508923.png)
+![image-20250423104508923](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250423104508923.png)
 
 
 
@@ -389,7 +389,7 @@ String类型，也就是字符串类型，是Redis中最简单的存储类型。
 
 不管是哪种格式，底层都是字节数组形式存储，只不过是编码方式不同。字符串类型的最大空间不能超过512m
 
-![image-20250423110328712](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250423110328712.png)
+![image-20250423110328712](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250423110328712.png)
 
 String的常见命令有：
 
@@ -411,11 +411,11 @@ Hash类型，也叫散列，其value是一个无序字典，类似于Java中的H
 
 String结构是将对象序列化为JSON字符串后存储，当需要修改对象某个字段时很不方便：
 
-![image-20250423104927573](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250423104927573.png)
+![image-20250423104927573](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250423104927573.png)
 
 Hash结构可以将对象中的每个字段独立存储，可以针对单个字段做CRUD：
 
-![image-20250423104945011](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250423104945011.png)
+![image-20250423104945011](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250423104945011.png)
 
 **Hash类型的常见命令**
 
@@ -456,7 +456,7 @@ Redis中的List类型与Java中的LinkedList类似，可以看做是一个双向
 - LRANGE key star end：返回一段角标范围内的所有元素
 - BLPOP和BRPOP：与LPOP和RPOP类似，只不过在没有元素时等待指定时间，而不是直接返回nil
 
-![image-20250423105212221](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250423105212221.png)
+![image-20250423105212221](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250423105212221.png)
 
 
 
@@ -674,7 +674,7 @@ SpringData是Spring中数据操作的模块，包含对各种数据库的集成�
 
 SpringDataRedis中提供了RedisTemplate工具类，其中封装了各种对Redis的操作。并且将不同数据类型的操作API封装到了不同的类型中：
 
-![image-20250423185349234](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250423185349234.png)
+![image-20250423185349234](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250423185349234.png)
 
 
 
@@ -800,11 +800,11 @@ class RedisDemoApplicationTests {
 
 RedisTemplate可以接收任意Object作为值写入Redis：
 
-![image-20250423191538109](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250423191538109.png)
+![image-20250423191538109](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250423191538109.png)
 
 只不过写入前会把Object序列化为字节形式，默认是采用JDK序列化，得到的结果是这样的：
 
-![image-20250423191549112](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250423191549112.png)
+![image-20250423191549112](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250423191549112.png)
 
 缺点：
 
@@ -840,7 +840,7 @@ public class RedisConfig {
 
 这里采用了JSON序列化来代替默认的JDK序列化方式。最终结果如图：
 
-![image-20250423191616364](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250423191616364.png)
+![image-20250423191616364](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250423191616364.png)
 
 整体可读性有了很大提升，并且能将Java对象自动的序列化为JSON字符串，并且查询时能自动把JSON反序列化为Java对象。不过，其中记录了序列化时对应的class名称，目的是为了查询时实现自动反序列化。这会带来额外的内存开销
 
@@ -850,17 +850,17 @@ public class RedisConfig {
 
 尽管JSON的序列化方式可以满足我们的需求，但依然存在一些问题，如图：
 
-![image-20250423191646251](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250423191646251.png)
+![image-20250423191646251](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250423191646251.png)
 
 为了在反序列化时知道对象的类型，JSON序列化器会将类的class类型写入json结果中，存入Redis，会带来额外的内存开销
 
 为了减少内存的消耗，我们可以采用手动序列化的方式，换句话说，就是不借助默认的序列化器，而是我们自己来控制序列化的动作，同时，我们只采用String的序列化器，这样，在存储value时，我们就不需要在内存中就不用多存储数据，从而节约我们的内存空间
 
-![image-20250423191714354](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250423191714354.png)
+![image-20250423191714354](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250423191714354.png)
 
 这种用法比较普遍，因此SpringDataRedis就提供了RedisTemplate的子类：StringRedisTemplate，它的key和value的序列化方式默认就是String方式
 
-![image-20250423191749935](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250423191749935.png)
+![image-20250423191749935](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250423191749935.png)
 
 省去了我们自定义RedisTemplate的序列化方式的步骤，而是直接使用：
 

@@ -306,7 +306,7 @@ SELECT 字段列表 FROM 表名 LIMIT 起始索引, 查询记录数 ;
 
 ##### 执行顺序
 
-![image-20250416140423778](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250416140423778.png)
+![image-20250416140423778](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250416140423778.png)
 
 
 
@@ -485,7 +485,7 @@ ALTER TABLE 表名 ADD CONSTRAINT 外键名称 FOREIGN KEY (外键字段) REFERE
 
 ### 内连接
 
-![image-20250416142114231](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250416142114231.png)
+![image-20250416142114231](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250416142114231.png)
 
 **隐式内连接**
 
@@ -509,7 +509,7 @@ SELECT 字段列表 FROM 表1 [ INNER ] JOIN 表2 ON 连接条件 ... ;
 
 ### 外连接
 
-![image-20250416142255758](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250416142255758.png)
+![image-20250416142255758](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250416142255758.png)
 
 **左外连接**
 
@@ -678,7 +678,7 @@ ROLLBACK;
 
 一个事务读到另外一个事务还没有提交的数据
 
-![image-20250416143418510](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250416143418510.png)
+![image-20250416143418510](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250416143418510.png)
 
 
 
@@ -686,7 +686,7 @@ ROLLBACK;
 
 一个事务先后读取同一条记录，但两次读取的数据不同，称之为不可重复读
 
-![image-20250416143455165](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250416143455165.png)
+![image-20250416143455165](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250416143455165.png)
 
 
 
@@ -694,7 +694,7 @@ ROLLBACK;
 
 一个事务按照条件查询数据时，没有对应的数据行，但是在插入数据时，又发现这行数据已经存在，好像出现了 "幻影"
 
-![image-20250416143615557](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250416143615557.png)
+![image-20250416143615557](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250416143615557.png)
 
 
 
@@ -735,7 +735,7 @@ ROLLBACK;
 
 ### 体系结构
 
-![image-20250417095526645](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250417095526645.png)
+![image-20250417095526645](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250417095526645.png)
 
 **连接层**
 
@@ -835,7 +835,7 @@ xxx.ibd：xxx代表的是表名，innoDB引擎的每张表都会对应这样一�
 
 **逻辑存储结构**
 
-![image-20250417101939331](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250417101939331.png)
+![image-20250417101939331](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250417101939331.png)
 
 - 表空间 : InnoDB存储引擎逻辑结构的最高层，ibd文件其实就是表空间文件，在表空间中可以包含多个Segment段
 - 段 : 表空间是由各个段组成的， 常见的段有数据段、索引段、回滚段等。InnoDB中对于段的管理，都是引擎自身完成，不需要人为对其控制，一个段中包含多个区
@@ -969,11 +969,11 @@ MySQL的索引是在存储引擎层实现的，不同的存储引擎有不同的
 
 假如说MySQL的索引结构采用二叉树的数据结构，比较理想的结构如下：
 
-![image-20250417110404596](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250417110404596.png)
+![image-20250417110404596](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250417110404596.png)
 
 如果主键是顺序插入的，则会形成一个单向链表，结构如下：
 
-![image-20250417110427896](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250417110427896.png)
+![image-20250417110427896](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250417110427896.png)
 
 所以，如果选择二叉树作为索引结构，会存在以下缺点：
 
@@ -987,7 +987,7 @@ MySQL的索引是在存储引擎层实现的，不同的存储引擎有不同的
 
 据，最终形成的数据结构也是一颗平衡的二叉树,结构如下:
 
-![image-20250417110531367](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250417110531367.png)
+![image-20250417110531367](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250417110531367.png)
 
 但是，即使如此，由于红黑树也是一颗二叉树，所以也会存在一个缺点：大数据量情况下，层级较深，检索速度慢
 
@@ -1001,7 +1001,7 @@ B-Tree，B树是一种多叉路衡查找树，相对于二叉树，B树每个节
 
 个指针：
 
-![image-20250417110653523](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250417110653523.png)
+![image-20250417110653523](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250417110653523.png)
 
 > [!NOTE]
 >
@@ -1023,7 +1023,7 @@ B+Tree是B-Tree的变种，我们以一颗最大度数（max-degree）为4（4�
 
 下其结构示意图：
 
-![image-20250417110926245](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250417110926245.png)
+![image-20250417110926245](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250417110926245.png)
 
 我们可以看到，两部分：
 
@@ -1051,7 +1051,7 @@ MySQL索引数据结构对经典的B+Tree进行了优化。在原B+Tree的基础
 
 的链表指针，就形成了带有顺序指针的B+Tree，提高区间访问的性能，利于排序
 
-![image-20250417111303809](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250417111303809.png)
+![image-20250417111303809](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250417111303809.png)
 
 
 
@@ -1061,13 +1061,13 @@ MySQL索引数据结构对经典的B+Tree进行了优化。在原B+Tree的基础
 
 hash表中
 
-![image-20250417112958465](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250417112958465.png)
+![image-20250417112958465](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250417112958465.png)
 
 如果两个(或多个)键值，映射到一个相同的槽位上，他们就产生了hash冲突（也称为hash碰撞），可
 
 以通过链表来解决：
 
-![image-20250417113013106](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250417113013106.png)
+![image-20250417113013106](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250417113013106.png)
 
 特点：
 
@@ -1127,7 +1127,7 @@ InnoDB存储引擎根据B+Tree索引在指定条件下自动构建的
 
 聚集索引和二级索引的具体结构如下：
 
-![image-20250417122905676](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250417122905676.png)
+![image-20250417122905676](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250417122905676.png)
 
 - 聚集索引的叶子节点下挂的是这一行的数据
 - 二级索引的叶子节点下挂的是该字段值对应的主键值
@@ -1136,7 +1136,7 @@ InnoDB存储引擎根据B+Tree索引在指定条件下自动构建的
 
 执行如下的SQL语句时，查找过程：
 
-![image-20250417122914537](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250417122914537.png)
+![image-20250417122914537](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250417122914537.png)
 
 具体过程如下:
 
@@ -1352,7 +1352,7 @@ explain select * from tb_user force index(idx_user_pro) where profession = '软�
 | Using where; Using Index | 查找使用了索引，但是需要的数据都在索引列中能找到，所以不需要回表查询数据 |
 | Using index condition    | 查找使用了索引，但是需要回表查询数据                         |
 
-![image-20250417170529672](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250417170529672.png)
+![image-20250417170529672](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250417170529672.png)
 
 
 
@@ -1372,7 +1372,7 @@ create index idx_xxxx on table_name(column(n));
 
 **前缀索引的查询流程**
 
-![image-20250417170733070](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250417170733070.png)
+![image-20250417170733070](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250417170733070.png)
 
 
 
@@ -1385,7 +1385,7 @@ create index idx_xxxx on table_name(column(n));
 
 联合索引的结构示意图：
 
-![image-20250418113136247](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250418113136247.png)
+![image-20250418113136247](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250418113136247.png)
 
 
 
@@ -1439,7 +1439,7 @@ commit;
 
 用MySQL数据库提供的load指令进行插入。操作如下：
 
-![image-20250417210425975](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250417210425975.png)
+![image-20250417210425975](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250417210425975.png)
 
 可以执行如下指令，将数据脚本文件中的数据加载到表结构中：
 
@@ -1460,11 +1460,11 @@ load data local infile '/root/sql1.log' into table tb_user fieldsterminated by '
 
 在InnoDB存储引擎中，表数据都是根据主键顺序组织存放的，这种存储方式的表称为索引组织表(index organized table IOT)
 
-![image-20250417210610204](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250417210610204.png)
+![image-20250417210610204](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250417210610204.png)
 
 行数据，都是存储在聚集索引的叶子节点上的，InnoDB的逻辑结构图：
 
-![image-20250417101939331](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250417101939331.png)
+![image-20250417101939331](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250417101939331.png)
 
 在InnoDB引擎中，数据行是记录在逻辑结构 page 页中的，而每一个页的大小是固定的，默认16K。
 
@@ -1484,19 +1484,19 @@ load data local infile '/root/sql1.log' into table tb_user fieldsterminated by '
 
 从磁盘中申请页， 主键顺序插入
 
-![image-20250417210825305](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250417210825305.png)
+![image-20250417210825305](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250417210825305.png)
 
 第一个页没有满，继续往第一页插入
 
-![image-20250417210840025](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250417210840025.png)
+![image-20250417210840025](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250417210840025.png)
 
 当第一个也写满之后，再写入第二个页，页与页之间会通过指针连接
 
-![image-20250417210855542](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250417210855542.png)
+![image-20250417210855542](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250417210855542.png)
 
 当第二页写满了，再往第三页写入
 
-![image-20250417210909005](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250417210909005.png)
+![image-20250417210909005](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250417210909005.png)
 
 
 
@@ -1504,21 +1504,21 @@ load data local infile '/root/sql1.log' into table tb_user fieldsterminated by '
 
 加入1#,2#页都已经写满了，存放了如图所示的数据
 
-![image-20250417211000112](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250417211000112.png)
+![image-20250417211000112](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250417211000112.png)
 
 47所在的1#页，已经写满了，存储不了50对应的数据了。 那么此时会开辟一个新的页 3#
 
-![image-20250417211036834](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250417211036834.png)
+![image-20250417211036834](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250417211036834.png)
 
 但是并不会直接将50存入3#页，而是会将1#页后一半的数据，移动到3#页，然后在3#页，插入50
 
-![image-20250417211145995](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250417211145995.png)
+![image-20250417211145995](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250417211145995.png)
 
-![image-20250417211159585](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250417211159585.png)
+![image-20250417211159585](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250417211159585.png)
 
 移动数据，并插入id为50的数据之后，那么此时，这三个页之间的数据顺序是有问题的。 1#的下一个页，应该是3#， 3#的下一个页是2#。 所以，此时，需要重新设置链表指针
 
-![image-20250417211234396](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250417211234396.png)
+![image-20250417211234396](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250417211234396.png)
 
 上述的这种现象，称之为 "页分裂"，是比较耗费性能的操作
 
@@ -1528,29 +1528,29 @@ load data local infile '/root/sql1.log' into table tb_user fieldsterminated by '
 
 目前表中已有数据的索引结构(叶子节点)如下：
 
-![image-20250417211333365](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250417211333365.png)
+![image-20250417211333365](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250417211333365.png)
 
 当我们对已有数据进行删除时，具体的效果如下:
 
 当删除一行记录时，实际上记录并没有被物理删除，只是记录被标记（flaged）为删除并且它的空间变得允许被其他记录声明使用。
 
-![image-20250417211352683](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250417211352683.png)
+![image-20250417211352683](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250417211352683.png)
 
 当我们继续删除2#的数据记录
 
-![image-20250417211417161](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250417211417161.png)
+![image-20250417211417161](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250417211417161.png)
 
 当页中删除的记录达到 MERGE_THRESHOLD（默认为页的50%），InnoDB会开始寻找最靠近的页（前
 
 或后）看看是否可以将两个页合并以优化空间使用
 
-![](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250417211436576.png)
+![](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250417211436576.png)
 
-![image-20250417211449478](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250417211449478.png)
+![image-20250417211449478](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250417211449478.png)
 
 删除数据，并将页合并之后，再次插入新的数据21，则直接插入3#页
 
-![image-20250417211521829](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250417211521829.png)
+![image-20250417211521829](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250417211521829.png)
 
 这个里面所发生的合并页的这个现象，就称之为 "页合并"
 
@@ -1589,9 +1589,9 @@ load data local infile '/root/sql1.log' into table tb_user fieldsterminated by '
 
 升序/降序联合索引结构图示:
 
-![image-20250418131940708](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250418131940708.png)
+![image-20250418131940708](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250418131940708.png)
 
-![image-20250418131950909](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250418131950909.png)
+![image-20250418131950909](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250418131950909.png)
 
 
 
@@ -1717,7 +1717,7 @@ DROP VIEW [IF EXISTS] 视图名称 [,视图名称] ...
 
 比如，v2视图是基于v1视图的，如果在v2视图创建的时候指定了检查选项为 cascaded，但是v1视图创建时未指定检查选项。 则在执行检查时，不仅会检查v2，还会级联检查v2的关联视图v1
 
-![image-20250418155410892](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250418155410892.png)
+![image-20250418155410892](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250418155410892.png)
 
 **LOCAL**
 
@@ -1725,7 +1725,7 @@ DROP VIEW [IF EXISTS] 视图名称 [,视图名称] ...
 
 比如，v2视图是基于v1视图的，如果在v2视图创建的时候指定了检查选项为 local ，但是v1视图创建时未指定检查选项。 则在执行检查时，只会检查v2，不会检查v2的关联视图v1
 
-![image-20250418155522087](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250418155522087.png)
+![image-20250418155522087](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250418155522087.png)
 
 
 
@@ -1755,7 +1755,7 @@ DROP VIEW [IF EXISTS] 视图名称 [,视图名称] ...
 
 存储过程思想上很简单，就是数据库 SQL 语言层面的代码封装与重用
 
-![image-20250418160327568](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250418160327568.png)
+![image-20250418160327568](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250418160327568.png)
 
 | 特点                         | 说明                                                         |
 | ---------------------------- | ------------------------------------------------------------ |
@@ -2210,7 +2210,7 @@ characteristic说明：
 
 characteristic特性，否则就会报如下错误：
 
-![image-20250418183150597](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250418183150597.png)
+![image-20250418183150597](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250418183150597.png)
 
 
 
@@ -2363,13 +2363,13 @@ mysqldump --single-transaction -uroot –p123456 itcast > itcast.sql
 
 读锁：
 
-![image-20250418192818073](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250418192818073.png)
+![image-20250418192818073](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250418192818073.png)
 
 左侧为客户端一，对指定表加了读锁，不会影响右侧客户端二的读，但是会阻塞右侧客户端的写
 
 写锁：
 
-![image-20250418192903158](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250418192903158.png)
+![image-20250418192903158](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250418192903158.png)
 
 左侧为客户端一，对指定表加了写锁，会阻塞右侧客户端的读和写
 
@@ -2412,23 +2412,23 @@ MDL加锁过程是系统自动控制，无需显式使用，在访问一张表�
 
 首先客户端一，开启一个事务，然后执行DML操作，在执行DML语句时，会对涉及到的行加行锁
 
-![image-20250418194916697](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250418194916697.png)
+![image-20250418194916697](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250418194916697.png)
 
 当客户端二，想对这张表加表锁时，会检查当前表是否有对应的行锁，如果没有，则添加表锁，此时就会从第一行数据，检查到最后一行数据，效率较低
 
-![image-20250418194951748](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250418194951748.png)
+![image-20250418194951748](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250418194951748.png)
 
 有了意向锁之后 :
 
 客户端一，在执行DML操作时，会对涉及的行加行锁，同时也会对该表加上意向锁
 
-![image-20250418195018477](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250418195018477.png)
+![image-20250418195018477](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250418195018477.png)
 
 而其他客户端，在对这张表加表锁的时候，会根据该表上所加的意向锁来判定是否可以成功加表锁，而
 
 不用逐行判断行锁情况了
 
-![image-20250418195037907](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250418195037907.png)
+![image-20250418195037907](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250418195037907.png)
 
 
 
@@ -2453,15 +2453,15 @@ InnoDB的数据是基于索引组织的，行锁是通过对索引上的索引�
 
 **行锁（Record Lock）**：锁定单个行记录的锁，防止其他事务对此行进行update和delete。在RC、RR隔离级别下都支持
 
-![image-20250419154641182](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250419154641182.png)
+![image-20250419154641182](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250419154641182.png)
 
 **间隙锁（Gap Lock）**：锁定索引记录间隙（不含该记录），确保索引记录间隙不变，防止其他事务在这个间隙进行insert，产生幻读。在RR隔离级别下都支持
 
-![image-20250419154801671](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250419154801671.png)
+![image-20250419154801671](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250419154801671.png)
 
 **临键锁（Next-Key Lock）**：行锁和间隙锁组合，同时锁住数据，并锁住数据前面的间隙Gap。在RR隔离级别下支持
 
-![image-20250419154832734](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250419154832734.png)
+![image-20250419154832734](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250419154832734.png)
 
 
 
@@ -2475,7 +2475,7 @@ InnoDB实现了以下两种类型的行锁：
 
 两种行锁的兼容情况如下:
 
-![image-20250419155006366](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250419155006366.png)
+![image-20250419155006366](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250419155006366.png)
 
 常见的SQL语句，在执行时，所加的行锁如下：
 
@@ -2521,7 +2521,7 @@ select object_schema,object_name,index_name,lock_type,lock_mode,lock_data frompe
 
 InnoDB的B+树索引，叶子节点是有序的双向链表。 假如，我们要根据这个二级索引查询值为18的数据，并加上共享锁，我们是只锁定18这一行就可以了吗？ 并不是，因为是非唯一索引，这个结构中可能有多个18的存在，所以，在加锁时会继续往后找，找到一个不满足条件的值（当前案例中也就是29）。此时会对18加临键锁，并对29之前的间隙加锁
 
-![image-20250419161034648](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250419161034648.png)
+![image-20250419161034648](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250419161034648.png)
 
 
 
@@ -2557,7 +2557,7 @@ select object_schema,object_name,index_name,lock_type,lock_mode,lock_data frompe
 
 ### 逻辑存储结构
 
-![image-20250419162016462](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250419162016462.png)
+![image-20250419162016462](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250419162016462.png)
 
 **表空间**
 
@@ -2591,7 +2591,7 @@ select object_schema,object_name,index_name,lock_type,lock_mode,lock_data frompe
 
 MySQL5.5 版本开始，默认使用InnoDB存储引擎，它擅长事务处理，具有崩溃恢复特性，在日常开发中使用非常广泛。下面是InnoDB架构图，左侧为内存结构，右侧为磁盘结构
 
-![image-20250419162749718](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250419162749718.png)
+![image-20250419162749718](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250419162749718.png)
 
 #### 内存结构
 
@@ -2627,7 +2627,7 @@ InnoDB存储引擎基于磁盘文件存储，访问物理硬盘和在内存中�
 
 Change Buffer，更改缓冲区（针对于非唯一二级索引页），在执行DML语句时，如果这些数据Page没有在Buffer Pool中，不会直接操作磁盘，而会将数据变更存在更改缓冲区 Change Buffer中，在未来数据被读取时，再将数据合并恢复到Buffer Pool中，再将合并后的数据刷新到磁盘中
 
-![image-20250419163526054](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250419163526054.png)
+![image-20250419163526054](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250419163526054.png)
 
 与聚集索引不同，二级索引通常是非唯一的，并且以相对随机的顺序插入二级索引。同样，删除和更新可能会影响索引树中不相邻的二级索引页，如果每一次都操作磁盘，会造成大量的磁盘IO。有了ChangeBuffer之后，我们可以在缓冲池中进行合并处理，减少磁盘IO
 
@@ -2723,7 +2723,7 @@ InnoDB 使用会话临时表空间和全局临时表空间。存储用户创建�
 
 #### 后台线程
 
-![image-20250419165204110](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250419165204110.png)
+![image-20250419165204110](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250419165204110.png)
 
 在InnoDB的后台线程中，分为4类，分别是：Master Thread 、IO Thread、Purge Thread、Page Cleaner Thread
 
@@ -2781,7 +2781,7 @@ show engine innodb status \G;
 
 其中的原子性、一致性、持久化，实际上是由InnoDB中的两份日志来保证的，一份是redo log日志，一份是undo log日志。 而隔离性是通过数据库的锁，加上MVCC来保证的
 
-![image-20250419210931160](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250419210931160.png)
+![image-20250419210931160](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250419210931160.png)
 
 
 
@@ -2793,11 +2793,11 @@ show engine innodb status \G;
 
 在InnoDB引擎中的内存结构中，主要的内存区域就是缓冲池，在缓冲池中缓存了很多的数据页。 当我们在一个事务中，执行多个增删改的操作时，InnoDB引擎会先操作缓冲池中的数据，如果缓冲区没有对应的数据，会通过后台线程将磁盘中的数据加载出来，存放在缓冲区中，然后将缓冲池中的数据修改，修改后的数据页我们称为脏页。 而脏页则会在一定的时机，通过后台线程刷新到磁盘中，从而保证缓冲区与磁盘的数据一致。 而缓冲区的脏页数据并不是实时刷新的，而是一段时间之后将缓冲区的数据刷新到磁盘中，假如刷新到磁盘的过程出错了，而提示给用户事务提交成功，而数据却没有持久化下来，这就出现问题了，没有保证事务的持久性
 
-![image-20250419211731627](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250419211731627.png)
+![image-20250419211731627](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250419211731627.png)
 
 如何解决上述的问题呢？ 在InnoDB中提供了一份日志 redo log
 
-![image-20250419211806572](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250419211806572.png)
+![image-20250419211806572](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250419211806572.png)
 
 有了redolog之后，当对缓冲区的数据进行增删改之后，会首先将操作的数据页的变化，记录在redolog buffer中。在事务提交时，会将redo log buffer中的数据刷新到redo log磁盘文件中。过一段时间之后，如果刷新缓冲区的脏页到磁盘时，发生错误，此时就可以借助于redo log进行数据恢复，这样就保证了事务的持久性。 而如果脏页成功刷新到磁盘 或 或者涉及到的数据已经落盘，此时redolog就没有作用了，就可以删除了，所以存在的两个redolog文件是循环写的
 
@@ -2868,7 +2868,7 @@ Undo log存储：undo log采用段的方式进行管理和记录，存放在前�
 
 有一张表原始数据为：
 
-![image-20250420121126206](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250420121126206.png)
+![image-20250420121126206](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250420121126206.png)
 
 DB_TRX_ID : 代表最近修改事务ID，记录插入这条记录或最后一次修改该记录的事务ID，是自增的
 
@@ -2880,27 +2880,27 @@ DB_ROLL_PTR ： 由于这条数据是才插入的，没有被更新过，所以�
 
 第一步
 
-![image-20250420121216862](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250420121216862.png)
+![image-20250420121216862](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250420121216862.png)
 
 当事务2执行第一条修改语句时，会记录undo log日志，记录数据变更之前的样子; 然后更新记录，并且记录本次操作的事务ID，回滚指针，回滚指针用来指定如果发生回滚，回滚到哪一个版本
 
-![image-20250420121251956](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250420121251956.png)
+![image-20250420121251956](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250420121251956.png)
 
 第二步
 
-![image-20250420121427357](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250420121427357.png)
+![image-20250420121427357](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250420121427357.png)
 
 当事务3执行第一条修改语句时，也会记录undo log日志，记录数据变更之前的样子; 然后更新记录，并且记录本次操作的事务ID，回滚指针
 
-![image-20250420121442596](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250420121442596.png)
+![image-20250420121442596](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250420121442596.png)
 
 第三步
 
-![image-20250420121456512](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250420121456512.png)
+![image-20250420121456512](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250420121456512.png)
 
 当事务4执行第一条修改语句时，也会记录undo log日志，记录数据变更之前的样子; 然后更新记录，并且记录本次操作的事务ID，回滚指针
 
-![image-20250420121512419](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250420121512419.png)
+![image-20250420121512419](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250420121512419.png)
 
 最终我们发现，不同事务或相同事务对同一条记录进行修改，会导致该记录的undolog生成一条记录版本链表，链表的头部是最新的旧记录，链表尾部是最早的旧记录
 
@@ -2945,7 +2945,7 @@ RC隔离级别下，在事务中每一次执行快照读时生成ReadView
 
 在事务5中，查询了两次id为30的记录，由于隔离级别为Read Committed，所以每一次进行快照读都会生成一个ReadView，那么两次生成的ReadView如下：
 
-![image-20250420122239743](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250420122239743.png)
+![image-20250420122239743](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250420122239743.png)
 
 那么这两次快照读在获取数据时，就需要根据所生成的ReadView以及ReadView的版本链访问规则，到undo log版本链中匹配数据，最终决定此次快照读返回的数据
 
@@ -2953,19 +2953,19 @@ RC隔离级别下，在事务中每一次执行快照读时生成ReadView
 
 第一次快照读具体的读取过程：
 
-![image-20250420122505835](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250420122505835.png)
+![image-20250420122505835](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250420122505835.png)
 
 在进行匹配时，会从undo log的版本链，从上到下进行挨个匹配：
 
-![image-20250420122553367](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250420122553367.png)
+![image-20250420122553367](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250420122553367.png)
 
 先匹配上图这条记录，这条记录对应的trx_id为4，也就是将4带入右侧的匹配规则（上上图）中。 ①不满足 ②不满足 ③不满足 ④也不满足 ，都不满足，则继续匹配undo log版本链的下一条
 
-![image-20250420122657797](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250420122657797.png)
+![image-20250420122657797](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250420122657797.png)
 
 再匹配第二条（如上图），这条记录对应的trx_id为3，也就是将3带入右侧的匹配规则中。①不满足 ②不满足 ③不满足 ④也不满足 ，都不满足，则继续匹配undo log版本链的下一条
 
-![image-20250420122737722](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250420122737722.png)
+![image-20250420122737722](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250420122737722.png)
 
 再匹配第三条（如上图），这条记录对应的trx_id为2，也就是将2带入右侧的匹配规则中。①不满足 ②满足 终止匹配，此次快照读，返回的数据就是版本链中记录的这条数据
 
@@ -2973,15 +2973,15 @@ RC隔离级别下，在事务中每一次执行快照读时生成ReadView
 
 看第二次快照读具体的读取过程：
 
-![image-20250420123413816](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250420123413816.png)
+![image-20250420123413816](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250420123413816.png)
 
 在进行匹配时，会从undo log的版本链，从上到下进行挨个匹配：
 
-![image-20250420123251301](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250420123251301.png)
+![image-20250420123251301](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250420123251301.png)
 
 先匹配上图这条记录，这条记录对应的trx_id为4，也就是将4带入右侧的匹配规则中。 ①不满足 ②不满足 ③不满足 ④也不满足 ，都不满足，则继续匹配undo log版本链的下一条
 
-![image-20250420123339362](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250420123339362.png)
+![image-20250420123339362](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250420123339362.png)
 
 再匹配第二条，这条记录对应的trx_id为3，也就是将3带入右侧的匹配规则中。①不满足 ②满足 。终止匹配，此次快照读，返回的数据就是版本链中记录的这条数据
 
@@ -2991,7 +2991,7 @@ RC隔离级别下，在事务中每一次执行快照读时生成ReadView
 
 RR隔离级别下，仅在事务中第一次执行快照读时生成ReadView，后续复用该ReadView。 而RR 是可重复读，在一个事务中，执行两次相同的select语句，查询到的结果是一样的
 
-![image-20250420123658180](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250420123658180.png)
+![image-20250420123658180](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250420123658180.png)
 
 在RR隔离级别下，只是在事务中第一次快照读时生成ReadView，后续都是复用该ReadView，那么既然ReadView都一样， ReadView的版本链匹配规则也一样， 那么最终快照读返回的结果也是一样的
 
@@ -3001,7 +3001,7 @@ RR隔离级别下，仅在事务中第一次执行快照读时生成ReadView，�
 
 - 而MVCC + 锁，则实现了事务的隔离性。 而一致性则是由redolog 与 undolog保证
 
-![image-20250420123817382](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250420123817382.png)
+![image-20250420123817382](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250420123817382.png)
 
 
 
@@ -3259,7 +3259,7 @@ log_queries_not_using_indexes = 1
 - 主从复制是指将主数据库的 DDL 和 DML 操作通过二进制日志传到从库服务器中，然后在从库上对这些日志重新执行（也叫重做），从而使得从库和主库的数据保持同步
 - MySQL支持一台主库同时向多台从库进行复制， 从库同时也可以作为其他从服务器的主库，实现链状复制
 
-![image-20250420154247135](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250420154247135.png)
+![image-20250420154247135](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250420154247135.png)
 
 MySQL 复制的优点主要包含以下三个方面：
 
@@ -3275,7 +3275,7 @@ MySQL 复制的优点主要包含以下三个方面：
 
 MySQL主从复制的核心就是 二进制日志，具体的过程如下：
 
-![image-20250420154337135](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250420154337135.png)
+![image-20250420154337135](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250420154337135.png)
 
 从上图来看，复制分成三步：
 
@@ -3287,7 +3287,7 @@ MySQL主从复制的核心就是 二进制日志，具体的过程如下：
 
 ### 搭建
 
-![image-20250420154913819](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250420154913819.png)
+![image-20250420154913819](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250420154913819.png)
 
 准备好两台服务器之后，在上述的两台服务器中分别安装好MySQL，并完成基础的初始化准备(安装、密码配置等操作)工作。 其中：
 
@@ -3333,7 +3333,7 @@ GRANT REPLICATION SLAVE ON *.* TO 'itcast'@'%';
 show master status ;
 ```
 
-![image-20250420155055780](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250420155055780.png)
+![image-20250420155055780](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250420155055780.png)
 
 字段含义说明：
 
@@ -3406,7 +3406,7 @@ show slave status ; #8.0.22之前
 
 **问题分析**
 
-![image-20250420161426808](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250420161426808.png)
+![image-20250420161426808](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250420161426808.png)
 
 随着互联网及移动互联网的发展，应用系统的数据量也是成指数式增长，若采用单数据库进行数据存储，存在以下性能瓶颈：
 
@@ -3417,7 +3417,7 @@ show slave status ; #8.0.22之前
 
 为了解决上述问题，我们需要对数据库进行分库分表处理
 
-![image-20250420161507886](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250420161507886.png)
+![image-20250420161507886](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250420161507886.png)
 
 分库分表的中心思想都是将数据分散存储，使得单一数据库/表的数据量变小来缓解单一数据库的性能问题，从而达到提升数据库性能的目的
 
@@ -3427,7 +3427,7 @@ show slave status ; #8.0.22之前
 
 分库分表的形式，主要是两种：垂直拆分和水平拆分。而拆分的粒度，一般又分为分库和分表，所以组成的拆分策略最终如下：
 
-![image-20250420162308556](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250420162308556.png)
+![image-20250420162308556](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250420162308556.png)
 
 
 
@@ -3435,7 +3435,7 @@ show slave status ; #8.0.22之前
 
 垂直分库：以表为依据，根据业务将不同表拆分到不同库中
 
-![image-20250420162333707](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250420162333707.png)
+![image-20250420162333707](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250420162333707.png)
 
 特点：
 
@@ -3449,7 +3449,7 @@ show slave status ; #8.0.22之前
 
 垂直分表：以字段为依据，根据字段属性将不同字段拆分到不同表中
 
-![image-20250420162502541](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250420162502541.png)
+![image-20250420162502541](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250420162502541.png)
 
 特点：
 
@@ -3465,7 +3465,7 @@ show slave status ; #8.0.22之前
 
 水平分库：以字段为依据，按照一定策略，将一个库的数据拆分到多个库中
 
-![image-20250420162629951](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250420162629951.png)
+![image-20250420162629951](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250420162629951.png)
 
 特点：
 
@@ -3479,7 +3479,7 @@ show slave status ; #8.0.22之前
 
 水平分表：以字段为依据，按照一定策略，将一个表的数据拆分到多个表中
 
-![image-20250420162721120](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250420162721120.png)
+![image-20250420162721120](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250420162721120.png)
 
 特点：
 
@@ -3501,7 +3501,7 @@ show slave status ; #8.0.22之前
 
 - 开发人员只需要连接MyCat即可，而具体底层用到几台数据库，每一台数据库服务器里面存储了什么数据，都无需关心。 具体的分库分表的策略，只需要在MyCat中配置即可
 
-![image-20250420162950894](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250420162950894.png)
+![image-20250420162950894](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250420162950894.png)
 
 **下载**
 
@@ -3511,11 +3511,11 @@ show slave status ; #8.0.22之前
 
 **安装**
 
-![image-20250420163718505](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250420163718505.png)
+![image-20250420163718505](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250420163718505.png)
 
 **目录介绍**
 
-![image-20250420163735141](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250420163735141.png)
+![image-20250420163735141](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250420163735141.png)
 
 bin : 存放可执行文件，用于启动停止mycat
 
@@ -3529,7 +3529,7 @@ logs：存放mycat的日志文件
 
 在MyCat的整体结构中，分为两个部分：上面的逻辑结构、下面的物理结构
 
-![image-20250420163803434](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250420163803434.png)
+![image-20250420163803434](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250420163803434.png)
 
 在MyCat的逻辑结构主要负责逻辑库、逻辑表、分片规则、分片节点等逻辑结构的处理，而具体的数据存储还是在物理结构，也就是数据库服务器中存储的
 
@@ -3541,11 +3541,11 @@ logs：存放mycat的日志文件
 
 由于 tb_order 表中数据量很大，磁盘IO及容量都到达了瓶颈，现在需要对 tb_order 表进行数据分片，分为三个数据节点，每一个节点主机位于不同的服务器上, 具体的结构，参考下图：
 
-![image-20250420170633146](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250420170633146.png)
+![image-20250420170633146](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250420170633146.png)
 
 **环境准备**
 
-![image-20250420170653956](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250420170653956.png)
+![image-20250420170653956](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250420170653956.png)
 
 **配置**
 
@@ -3637,7 +3637,7 @@ mysql -h 192.168.200.210 -P 8066 -uroot -p123456
 
 schema.xml 作为MyCat中最重要的配置文件之一 , 涵盖了MyCat的逻辑库 、 逻辑表 、 分片规则、分片节点及数据源的配置
 
-![image-20250420212612443](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250420212612443.png)
+![image-20250420212612443](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250420212612443.png)
 
 主要包含三组标签：schema标签、datanode标签和datahost标签
 
@@ -3654,7 +3654,7 @@ schema.xml 作为MyCat中最重要的配置文件之一 , 涵盖了MyCat的逻�
 
 rule.xml中定义所有拆分表的规则, 在使用过程中可以灵活的使用分片算法, 或者对同一个分片算法使用不同的参数, 它让分片过程可配置化。主要包含两类标签：tableRule、Function
 
-![image-20250421163731703](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250421163731703.png)
+![image-20250421163731703](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250421163731703.png)
 
 
 
@@ -3664,7 +3664,7 @@ server.xml配置文件包含了MyCat的系统配置信息，主要有两个重�
 
 **system标签**
 
-![image-20250421163810372](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250421163810372.png)
+![image-20250421163810372](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250421163810372.png)
 
 主要配置MyCat中的系统配置信息，对应的系统配置项及其含义，如下：
 
@@ -3685,7 +3685,7 @@ server.xml配置文件包含了MyCat的系统配置信息，主要有两个重�
 
 配置MyCat中的用户、访问密码，以及用户针对于逻辑库、逻辑表的权限信息，具体的权限描述方式及配置说明如下：
 
-![image-20250421164346781](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250421164346781.png)
+![image-20250421164346781](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250421164346781.png)
 
 
 
@@ -3695,15 +3695,15 @@ server.xml配置文件包含了MyCat的系统配置信息，主要有两个重�
 
 在业务系统中, 涉及以下表结构 ,但是由于用户与订单每天都会产生大量的数据, 单台服务器的数据存储及处理能力是有限的, 可以对数据库表进行拆分, 原有的数据库表如下
 
-![image-20250421211104718](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250421211104718.png)
+![image-20250421211104718](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250421211104718.png)
 
 现在考虑将其进行垂直分库操作，将商品相关的表拆分到一个数据库服务器，订单表拆分的一个数据库服务器，用户及省市区表拆分到一个服务器。最终结构如下：
 
-![image-20250421211126131](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250421211126131.png)
+![image-20250421211126131](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250421211126131.png)
 
 准备三台服务器，IP地址如图所示：
 
-![image-20250421211144743](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250421211144743.png)
+![image-20250421211144743](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250421211144743.png)
 
 并且在192.168.200.210，192.168.200.213, 192.168.200.214上面创建数据库shopping
 
@@ -3774,7 +3774,7 @@ user="root" password="1234" />
 
 导入数据
 
-![image-20250421212033031](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250421212033031.png)
+![image-20250421212033031](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250421212033031.png)
 
 测试
 
@@ -3809,11 +3809,11 @@ type="global"/>
 
 在业务系统中, 有一张表(日志表), 业务系统每天都会产生大量的日志数据 , 单台服务器的数据存储及处理能力是有限的, 可以对数据库表进行拆分
 
-![image-20250421212246165](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250421212246165.png)
+![image-20250421212246165](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250421212246165.png)
 
 准备三台服务器，具体的结构如下：
 
-![image-20250421212303401](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250421212303401.png)
+![image-20250421212303401](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250421212303401.png)
 
 并且，在三台数据库服务器中分表创建一个数据库itcast
 
@@ -3853,7 +3853,7 @@ tb_log表最终落在3个节点中，分别是 dn4、dn5、dn6 ，而具体的�
 
 根据指定的字段及其配置的范围与数据节点的对应情况， 来决定该数据属于哪一个分片
 
-![image-20250421214040896](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250421214040896.png)
+![image-20250421214040896](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250421214040896.png)
 
 schema.xml逻辑表配置：
 
@@ -3915,7 +3915,7 @@ rule.xml分片规则配置：
 
 根据指定的字段值与节点数量进行求模运算，根据运算结果， 来决定该数据属于哪一个分片
 
-![image-20250421214346605](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250421214346605.png)
+![image-20250421214346605](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250421214346605.png)
 
 schema.xml逻辑表配置：
 
@@ -3962,7 +3962,7 @@ rule.xml分片规则配置：
 
 所谓一致性哈希，相同的哈希因子计算值总是被划分到相同的分区表中，不会因为分区节点的增加而改变原来数据的分区位置，有效的解决了分布式数据的拓容问题
 
-![image-20250421215437289](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250421215437289.png)
+![image-20250421215437289](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250421215437289.png)
 
 schema.xml中逻辑表配置：
 
@@ -4014,7 +4014,7 @@ rule.xml中分片规则配置：
 
 通过在配置文件中配置可能的枚举值, 指定数据分布到不同数据节点上, 本规则适用于按照省份、性别、状态拆分数据等业务
 
-![image-20250421215907022](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250421215907022.png)
+![image-20250421215907022](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250421215907022.png)
 
 schema.xml中逻辑表配置：
 
@@ -4078,7 +4078,7 @@ partition-hash-int.txt ，内容如下 :
 
 运行阶段由应用自主决定路由到那个分片 , 直接根据字符子串（必须是数字）计算分片号
 
-![image-20250422103555462](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250422103555462.png)
+![image-20250422103555462](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250422103555462.png)
 
 schema.xml中逻辑表配置：
 
@@ -4131,7 +4131,7 @@ class="io.mycat.route.function.PartitionDirectBySubString">
 
 该算法类似于十进制的求模运算，但是为二进制的操作，例如，取 id 的二进制低 10 位 与1111111111 进行位 & 运算，位与运算最小值为 0000000000，最大值为1111111111，转换为十进制，也就是位于0-1023之间
 
-![image-20250422103811513](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250422103811513.png)
+![image-20250422103811513](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250422103811513.png)
 
 特点：
 
@@ -4193,7 +4193,7 @@ class="io.mycat.route.function.PartitionByLong">
 
 以上分为三个分区:0-255,256-511,512-1023
 
-![image-20250422104053375](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250422104053375.png)
+![image-20250422104053375](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250422104053375.png)
 
 
 
@@ -4201,7 +4201,7 @@ class="io.mycat.route.function.PartitionByLong">
 
 截取字符串中的指定位置的子字符串, 进行hash算法， 算出分片
 
-![image-20250422104112396](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250422104112396.png)
+![image-20250422104112396](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250422104112396.png)
 
 schema.xml中逻辑表配置：
 
@@ -4245,7 +4245,7 @@ class="io.mycat.route.function.PartitionByString">
 | partitionCount  | 分区数                                                       |
 | hashSlice       | hash运算位 , 根据子字符串的hash运算 ; 0 代表 str.length(), -1 代表 str.length()-1 , 大于0只代表数字自身 ; 可以理解为substring（start，end），start为0则只表示0 |
 
-![image-20250422104209934](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250422104209934.png)
+![image-20250422104209934](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250422104209934.png)
 
 
 
@@ -4253,7 +4253,7 @@ class="io.mycat.route.function.PartitionByString">
 
 按照日期及对应的时间周期来分片
 
-![image-20250422104312048](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250422104312048.png)
+![image-20250422104312048](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250422104312048.png)
 
 schema.xml中逻辑表配置：
 
@@ -4306,7 +4306,7 @@ rule.xml中分片规则配置：
 
 使用场景为按照月份来分片, 每个自然月为一个分片
 
-![image-20250422104520653](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250422104520653.png)
+![image-20250422104520653](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250422104520653.png)
 
 schema.xml中逻辑表配置：
 
@@ -4357,7 +4357,7 @@ rule.xml中分片规则配置：
 
 ##### 原理
 
-![image-20250422110459430](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250422110459430.png)
+![image-20250422110459430](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250422110459430.png)
 
 在MyCat中，当执行一条SQL语句时，MyCat需要进行SQL解析、分片分析、路由分析、读写分离分析等操作，最终经过一系列的分析决定将当前的SQL语句到底路由到那几个(或哪一个)节点数据库，数据库将数据执行完毕后，如果有返回的结果，则将结果返回给MyCat，最终还需要在MyCat中进行结果合并、聚合处理、排序处理、分页处理等操作，最终再将结果返回给客户端
 
@@ -4406,7 +4406,7 @@ Mycat-eye运行过程中需要依赖zookeeper，因此需要先安装zookeeper
 
 通过MyCat即可轻易实现上述功能，不仅可以支持MySQL，也可以支持Oracle和SQL Server
 
-![image-20250422110907699](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250422110907699.png)
+![image-20250422110907699](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250422110907699.png)
 
 
 
@@ -4414,7 +4414,7 @@ Mycat-eye运行过程中需要依赖zookeeper，因此需要先安装zookeeper
 
 MySQL的主从复制，是基于二进制日志（binlog）实现的
 
-![image-20250422111003250](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250422111003250.png)
+![image-20250422111003250](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250422111003250.png)
 
 参考[主从复制](#主从复制)
 
@@ -4441,7 +4441,7 @@ schema.xml配置
 </dataHost>
 ```
 
-![image-20250422111220912](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250422111220912.png)
+![image-20250422111220912](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250422111220912.png)
 
 writeHost代表的是写操作对应的数据库，readHost代表的是读操作对应的数据库。 所以我们要想实现读写分离，就得配置writeHost关联的是主库，readHost关联的是从库
 
@@ -4484,13 +4484,13 @@ server.xml配置
 
 一个主机 Master1 用于处理所有写请求，它的从机 Slave1 和另一台主机 Master2 还有它的从机 Slave2 负责所有读请求。当 Master1 主机宕机后，Master2 主机负责写请求，Master1 、Master2 互为备机。架构图如下:
 
-![image-20250422121532574](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250422121532574.png)
+![image-20250422121532574](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250422121532574.png)
 
 #### 主库配置
 
 **Master1**
 
-![image-20250422121543624](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250422121543624.png)
+![image-20250422121543624](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250422121543624.png)
 
 修改配置文件 /etc/my.cnf
 
@@ -4524,7 +4524,7 @@ GRANT REPLICATION SLAVE ON *.* TO 'itcast'@'%';
 
 **Master2**
 
-![image-20250422121759587](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250422121759587.png)
+![image-20250422121759587](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250422121759587.png)
 
 修改配置文件 /etc/my.cnf
 
@@ -4560,7 +4560,7 @@ GRANT REPLICATION SLAVE ON *.* TO 'itcast'@'%';
 
 **Slave1**
 
-![image-20250422121924615](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250422121924615.png)
+![image-20250422121924615](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250422121924615.png)
 
 修改配置文件 /etc/my.cnf
 
@@ -4579,7 +4579,7 @@ systemctl restart mysqld
 
 **Slave2**
 
-![image-20250422122010382](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250422122010382.png)
+![image-20250422122010382](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250422122010382.png)
 
 修改配置文件 /etc/my.cnf
 
@@ -4600,7 +4600,7 @@ systemctl restart mysqld
 
 **两台从库配置关联的主库**
 
-![image-20250422122141054](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250422122141054.png)
+![image-20250422122141054](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250422122141054.png)
 
 在 slave1上执行
 
@@ -4625,7 +4625,7 @@ show slave status \G;
 
 **两台主库相互复制**
 
-![image-20250422122313319](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250422122313319.png)
+![image-20250422122313319](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250422122313319.png)
 
 在 Master1上执行
 
@@ -4694,7 +4694,7 @@ user="root" password="1234" />
 
 具体的对应情况如下：
 
-![image-20250422122608191](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250422122608191.png)
+![image-20250422122608191](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250422122608191.png)
 
 balance="1"
 

@@ -32,7 +32,7 @@ sudo yum install -y yum-utils device-mapper-persistent-data lvm2
 >
 > 报错：
 >
-> ![image-20250307191215568](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250307191215568.png)
+> ![image-20250307191215568](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250307191215568.png)
 >
 > 方法：
 >
@@ -144,7 +144,7 @@ Docker官方提供了一个专门管理、存储镜像的网站，并对外开�
 >
 > 网址：[Docker Hub Container Image Library | App Containerization](https://hub.docker.com/)
 
-![image-20250309205128340](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250309205128340.png)
+![image-20250309205128340](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250309205128340.png)
 
 ### 命令解读
 
@@ -201,7 +201,7 @@ docker run -d \
 | docker load    | 加载本地压缩文件到镜像         | [docker load](https://docs.docker.com/engine/reference/commandline/load/) |
 | docker inspect | 查看容器详细信息               | [docker inspect](https://docs.docker.com/engine/reference/commandline/inspect/) |
 
-![image-20250310161456044](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250310161456044.png)
+![image-20250310161456044](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250310161456044.png)
 
 **演示**
 
@@ -282,7 +282,7 @@ fi
 
 **数据卷（volume）**是一个虚拟目录，是**容器内目录**与**宿主机**目录之间映射的桥梁
 
-![image-20250310164237853](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250310164237853.png)
+![image-20250310164237853](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250310164237853.png)
 
 在上图中：
 
@@ -568,7 +568,7 @@ show tables;
 
 例如，第一步中需要的Linux运行环境，通用性就很强，所以Docker官方就制作了这样的只包含Linux运行环境的镜像。我们在制作java镜像时，就无需重复制作，直接使用Docker官方提供的CentOS或Ubuntu镜像作为基础镜像。然后再搭建其它层即可，这样逐层搭建，最终整个Java项目的镜像结构如图所示：
 
-![image-20250310184040102](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250310184040102.png)
+![image-20250310184040102](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250310184040102.png)
 
 #### Dockerfile
 
@@ -595,13 +595,9 @@ Dockerfile就是一个文本文件，其中包含一个个的指令（Instructio
 
 当Dockerfile文件写好以后，就可以利用命令来构建镜像了。
 
-在课前资料中，我们准备好了一个demo项目及对应的Dockerfile：
+在课前资料中，我们准备好了一个demo项目及对应的Dockerfile
 
-![img](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/asynccode)
-
-首先，我们将课前资料提供的`docker-demo.jar`包以及`Dockerfile`拷贝到虚拟机的`/root/demo`目录：
-
-![img](https://b11et3un53m.feishu.cn/space/api/box/stream/download/asynccode/?code=ODA2NWM2NGUzMWM1OTExYmE5NzI2NGRlODFiMjE4Y2RfemVnbklMN0NxNHhGMjdwTkNuQXpYbEp4NkNlNloxc3JfVG9rZW46RGFOeGJ3Tjg0bzdtRWx4N3A0OGNRU1NTbnJlXzE3NDE2MDQwNTE6MTc0MTYwNzY1MV9WNA)
+首先，我们将课前资料提供的`docker-demo.jar`包以及`Dockerfile`拷贝到虚拟机的`/root/demo`目录
 
 然后，执行命令，构建镜像：
 
@@ -624,10 +620,6 @@ docker build -t docker-demo:1.0 .
         # 直接指定Dockerfile目录
         docker build -t docker-demo:1.0 /root/demo
         ```
-
-结果：
-
-![img](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/asynccode)
 
 查看镜像列表：
 

@@ -23,13 +23,13 @@ Maven就是一个软件，掌握安装、配置、以及基本功能 **（项目
     Maven 可以管理项目的编译、测试、打包、部署等构建过程。通过实现标准的构建生命周期，Maven 可以确保每一个构建过程都遵循同样的规则和最佳实践。同时，Maven 的插件机制也使得开发者可以对构建过程进行扩展和定制。主动触发构建，只需要简单的命令操作即可。
 
 
-![image-20250329120409465](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250329120409465.png)
+![image-20250329120409465](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250329120409465.png)
 
 
 
 **Maven软件工作原理模型图**
 
-![image-20250329120624280](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250329120624280.png)
+![image-20250329120624280](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250329120624280.png)
 
 
 
@@ -47,11 +47,11 @@ Maven就是一个软件，掌握安装、配置、以及基本功能 **（项目
 
 1. 配置MAVEN_HOME
 
-![image-20250329122117994](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250329122117994.png)
+![image-20250329122117994](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250329122117994.png)
 
 2. 配置Path
 
-![image-20250329122223580](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250329122223580.png)
+![image-20250329122223580](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250329122223580.png)
 
 3. 测试
 
@@ -95,7 +95,7 @@ mvn -v
 
 **IDEA配置本地Maven软件**
 
-![image-20250329122608794](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250329122608794.png)
+![image-20250329122608794](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250329122608794.png)
 
 
 
@@ -453,7 +453,7 @@ dependencies标签下引入开发需要的jar包！我们可以在build/plugins/
 
 当直接引用或者间接引用出现了相同的jar包! 这时呢，一个项目就会出现相同的重复jar包，这就算作冲突！依赖冲突避免出现重复依赖，并且终止依赖传递！
 
-![image-20250329155710155](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250329155710155.png)
+![image-20250329155710155](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250329155710155.png)
 
 maven有自动解决依赖冲突问题能力，会按照自己的原则，进行重复依赖选择。同时也提供了手动解决的冲突的方式，不过不推荐！
 
@@ -677,7 +677,7 @@ Maven 私服是一种特殊的Maven远程仓库，它是架设在局域网内的
 
 此外，一些无法从外部仓库下载到的构件，也能从本地上传到私服供其他人使用。
 
-![image-20250329163403794](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250329163403794.png)
+![image-20250329163403794](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250329163403794.png)
 
 ②Maven私服的优势
 
@@ -714,38 +714,38 @@ Maven 私服是一种特殊的Maven远程仓库，它是架设在局域网内的
 
 首页地址：http://localhost:8081/，8081为默认端口号
 
-![image-20250329163504136](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250329163504136.png)
+![image-20250329163504136](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250329163504136.png)
 
 
 
 ### 初始设置
 
-![image-20250329163527010](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250329163527010.png)
+![image-20250329163527010](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250329163527010.png)
 
-![image-20250329163559542](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250329163559542.png)
+![image-20250329163559542](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250329163559542.png)
 
 - 用户名：admin
 - 密码：查看 **E:\Server\nexus-3.61.0-02-win64\sonatype-work\nexus3\admin.password** 文件
 
 继续执行初始化：
 
-![image-20250329163623799](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250329163623799.png)
+![image-20250329163623799](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250329163623799.png)
 
-![image-20250329163634958](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250329163634958.png)
+![image-20250329163634958](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250329163634958.png)
 
 匿名登录，启用还是禁用？由于启用匿名登录后，后续操作比较简单，这里我们演示禁用匿名登录的操作：
 
-![image-20250329163658532](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250329163658532.png)
+![image-20250329163658532](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250329163658532.png)
 
 初始化完毕：
 
-![image-20250329163723101](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250329163723101.png)
+![image-20250329163723101](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250329163723101.png)
 
 
 
 ### Nexus上的各种仓库
 
-![image-20250329163750964](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250329163750964.png)
+![image-20250329163750964](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250329163750964.png)
 
 | 仓库类型 | 说明                                           |
 | -------- | ---------------------------------------------- |
@@ -762,7 +762,7 @@ Maven 私服是一种特殊的Maven远程仓库，它是架设在局域网内的
 
 初始状态下，这几个仓库都没有内容：
 
-![image-20250329163818323](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250329163818323.png)
+![image-20250329163818323](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250329163818323.png)
 
 
 
@@ -788,7 +788,7 @@ Maven 私服是一种特殊的Maven远程仓库，它是架设在局域网内的
 
 这里的 url 标签是这么来的：
 
-![image-20250329163904237](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250329163904237.png)
+![image-20250329163904237](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250329163904237.png)
 
 把上图中看到的地址复制出来即可。如果我们在前面允许了匿名访问，到这里就够了。但如果我们禁用了匿名访问，那么接下来我们还要继续配置 settings.xml：
 
@@ -821,15 +821,15 @@ mvn clean compile
 
 下载后，Nexus 服务器上就有了 jar 包：
 
-![image-20250329164053971](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250329164053971.png)
+![image-20250329164053971](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250329164053971.png)
 
 若下载速度太慢，可以设置私服中中央仓库的地址为阿里云仓库地址
 
-![image-20250329164113153](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250329164113153.png)
+![image-20250329164113153](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250329164113153.png)
 
 修改为：http://maven.aliyun.com/nexus/content/groups/public/
 
-![image-20250329164127802](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250329164127802.png)
+![image-20250329164127802](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250329164127802.png)
 
 
 
@@ -874,7 +874,7 @@ mvn deploy
 > [INFO] demo06-mysql-data-provider ......................... SUCCESS [ 6.779 s]
 > [INFO] demo07-redis-data-provider 1.0-SNAPSHOT ............ SUCCESS [ 0.273 s]
 
-![4219155](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250329164219155.png)
+![4219155](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250329164219155.png)
 
 
 
@@ -904,7 +904,7 @@ maven工程中配置：
 
 ### 项目需求和结构分析
 
-![image-20250329165255833](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250329165255833.png)
+![image-20250329165255833](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250329165255833.png)
 
 需求案例：搭建一个电商平台项目，该平台包括用户服务、订单服务、通用工具模块等。
 
@@ -933,7 +933,7 @@ maven工程中配置：
 
 创建工程：
 
-![image-20250329165522269](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250329165522269.png)
+![image-20250329165522269](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250329165522269.png)
 
 pom.xml配置：
 
@@ -1016,9 +1016,9 @@ pom.xml配置：
 
 创建工程：
 
-![image-20250329165626611](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250329165626611.png)
+![image-20250329165626611](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250329165626611.png)
 
-![image-20250329165641344](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250329165641344.png)
+![image-20250329165641344](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250329165641344.png)
 
 pom.xml配置：
 
@@ -1077,9 +1077,9 @@ pom.xml配置：
 
 创建工程：
 
-![image-20250329165716344](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250329165716344.png)
+![image-20250329165716344](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250329165716344.png)
 
-![image-20250329165726779](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250329165726779.png)
+![image-20250329165726779](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250329165726779.png)
 
 pom.xml配置：
 
@@ -1119,7 +1119,7 @@ pom.xml配置：
 
 依赖传递结果：
 
-![image-20250329165745794](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250329165745794.png)
+![image-20250329165745794](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250329165745794.png)
 
 
 
@@ -1127,7 +1127,7 @@ pom.xml配置：
 
 创建工程，并使用插件转为web工程：
 
-![image-20250329165810590](https://raw.githubusercontent.com/jinpeng1666/picgo/master/Typora/other/image-20250329165810590.png)
+![image-20250329165810590](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250329165810590.png)
 
 pom.xml配置：
 
