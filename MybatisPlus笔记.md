@@ -64,8 +64,6 @@
 
 # 持久层接口
 
-对于两个不同的概念，产生疑问
-
 `IService`：[持久层接口 | MyBatis-Plus](https://baomidou.com/guides/data-interface/#service-interface)
 
 `BaseMapper`：[持久层接口 | MyBatis-Plus](https://baomidou.com/guides/data-interface/#mapper-interface)
