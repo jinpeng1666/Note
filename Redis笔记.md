@@ -1,12 +1,12 @@
-# 初始Redis
+# 1-初始Redis
 
-### 认识NoSQL
+## 1-1-认识NoSQL
 
 **NoSql**可以翻译做Not Only Sql（不仅仅是SQL），或者是No Sql（非Sql的）数据库。是相对于传统关系型数据库而言，有很大差异的一种特殊的数据库，因此也称之为**非关系型数据库**
 
 
 
-#### 结构化与非结构化
+### 1-1-1结构化与非结构化
 
 传统关系型数据库是结构化数据，每一张表都有严格的约束信息：字段名.字段数据类型.字段约束等等信息，插入的数据必须遵守这些约束：
 
@@ -28,7 +28,7 @@
 
 
 
-#### 关联和非关联
+### 1-1-2关联和非关联
 
 传统数据库的表与表之间往往存在关联，例如外键：
 
@@ -61,7 +61,7 @@
 
 
 
-#### 查询方式
+### 1-1-3-查询方式
 
 传统关系型数据库会基于Sql语句做查询，语法有统一标准；
 
@@ -71,13 +71,13 @@
 
 
 
-#### 事务
+### 1-1-4-事务
 
 传统关系型数据库能满足事务ACID的原则，而非关系型数据库往往不支持事务，或者不能严格保证ACID的特性，只能实现基本的一致性
 
 
 
-#### 总结
+### 1-1-5-总结
 
 除了上述四点以外，在存储方式、扩展性、查询性能上关系型与非关系型也都有着显著差异，总结如下：
 
@@ -94,7 +94,7 @@
 
 
 
-### 认识Redis
+## 1-2-认识Redis
 
 Redis诞生于2009年全称是**Re**mote  **D**ictionary **S**erver 远程词典服务器，是一个基于内存的键值型NoSQL数据库
 
@@ -111,11 +111,11 @@ Redis的官方网站地址：https://redis.io/
 
 
 
-### 安装Redis
+## 1-3-安装Redis
 
 选择的Linux版本为CentOS 7
 
-#### 依赖库
+### 1-3-1-依赖库
 
 Redis是基于C语言编写的，因此首先需要安装Redis所需要的gcc依赖：
 
@@ -123,7 +123,7 @@ Redis是基于C语言编写的，因此首先需要安装Redis所需要的gcc依
 yum install -y gcc tcl
 ```
 
-#### 上传安装包并解压
+### 1-3-2-上传安装包并解压
 
 将Redis安装包上传到虚拟机的任意目录：
 
@@ -161,7 +161,7 @@ make && make install
 
 
 
-#### 启动
+### 1-3-3-启动
 
 redis的启动方式有很多种，例如：
 
@@ -301,9 +301,9 @@ systemctl enable redis
 
 
 
-### Redis桌面客户端
+## 1-4-Redis桌面客户端
 
-#### Redis命令行客户端
+### 1-4-1-Redis命令行客户端
 
 Redis安装完成后就自带了命令行客户端：redis-cli，使用方式如下：
 
@@ -327,15 +327,15 @@ redis-cli [options] [commonds]
 
 
 
-#### 图形化桌面客户端
+### 1-4-2-图形化桌面客户端
 
 安装包：https://github.com/lework/RedisDesktopManager-Windows/releases
 
 
 
-# 常见命令
+# 2-常见命令
 
-### 数据结构
+## 2-1-数据结构
 
 Redis是一个key-value的数据库，key一般是String类型，不过value的类型多种多样：
 
@@ -343,7 +343,7 @@ Redis是一个key-value的数据库，key一般是String类型，不过value的�
 
 
 
-### Key的层级结构
+## 2-2-Key的层级结构
 
 Redis没有类似MySQL中的Table的概念，我们该如何区分不同类型的key呢？
 
@@ -361,7 +361,7 @@ Redis的key允许有多个单词形成层级结构，多个单词之间用':'隔
 
 
 
-### 通用命令
+## 2-3-通用命令
 
 通用指令是部分数据类型的，都可以使用的指令，常见的有：
 
@@ -377,7 +377,7 @@ Redis的key允许有多个单词形成层级结构，多个单词之间用':'隔
 
 
 
-### String命令
+## 2-4-String命令
 
 String类型，也就是字符串类型，是Redis中最简单的存储类型。
 
@@ -405,7 +405,7 @@ String的常见命令有：
 
 
 
-### Hash命令
+## 2-5-Hash命令
 
 Hash类型，也叫散列，其value是一个无序字典，类似于Java中的HashMap结构。
 
@@ -434,7 +434,7 @@ Hash结构可以将对象中的每个字段独立存储，可以针对单个字�
 
 
 
-### List命令
+## 2-6-List命令
 
 Redis中的List类型与Java中的LinkedList类似，可以看做是一个双向链表结构。既可以支持正向检索和也可以支持反向检索
 
@@ -460,7 +460,7 @@ Redis中的List类型与Java中的LinkedList类似，可以看做是一个双向
 
 
 
-### Set命令
+## 2-7-Set命令
 
 Redis的Set结构与Java中的HashSet类似，可以看做是一个value为null的HashMap。因为也是一个hash表，因此具备与HashSet类似的特征：
 
@@ -482,7 +482,7 @@ Redis的Set结构与Java中的HashSet类似，可以看做是一个value为null�
 
 
 
-### SortedSet命令
+## 2-8-SortedSet命令
 
 Redis的SortedSet是一个可排序的set集合，与Java中的TreeSet有些类似，但底层数据结构却差别很大。SortedSet中的每一个元素都带有一个score属性，可以基于score属性对元素排序，底层的实现是一个跳表（SkipList）加 hash表
 
@@ -514,11 +514,11 @@ SortedSet的常见命令有：
 
 
 
-# Java客户端
+# 3-Java客户端
 
-### Jedis
+## 3-1-Jedis
 
-#### 快速入门
+### 3-1-1-快速入门
 
 1）引入依赖：
 
@@ -595,7 +595,7 @@ void tearDown() {
 
 
 
-#### 连接池
+### 3-1-2-连接池
 
 Jedis本身是线程不安全的，并且频繁的创建和销毁连接会有性能损耗，因此我们推荐大家使用Jedis连接池代替Jedis的直连方式
 
@@ -660,7 +660,7 @@ public class JedisConnectionFacotry {
 
 
 
-### SpringDataRedis
+## 3-2-SpringDataRedis
 
 SpringData是Spring中数据操作的模块，包含对各种数据库的集成，其中对Redis的集成模块就叫做SpringDataRedis，官网地址：https://spring.io/projects/spring-data-redis
 
@@ -678,7 +678,7 @@ SpringDataRedis中提供了RedisTemplate工具类，其中封装了各种对Redi
 
 
 
-#### 快速入门
+### 3-2-1-快速入门
 
 1）导入pom坐标
 
@@ -796,7 +796,7 @@ class RedisDemoApplicationTests {
 
 
 
-#### 数据序列化器
+### 3-2-2-数据序列化器
 
 RedisTemplate可以接收任意Object作为值写入Redis：
 
@@ -846,7 +846,7 @@ public class RedisConfig {
 
 
 
-### StringRedisTemplate
+## 3-3-StringRedisTemplate
 
 尽管JSON的序列化方式可以满足我们的需求，但依然存在一些问题，如图：
 
@@ -913,3 +913,709 @@ RedisTemplate的两种序列化实践方案：
     * 使用StringRedisTemplate
     * 写入Redis时，手动把对象序列化为JSON
     * 读取Redis时，手动把读取到的JSON反序列化为对象
+
+
+
+# 4-分布式缓存
+
+## 4-1-Redis持久化
+
+Redis有两种持久化方案：
+
+- RDB持久化
+- AOF持久化
+
+
+
+### 4-1-1-RDB持久化
+
+RDB全称Redis Database Backup file（Redis数据备份文件），也被叫做Redis数据快照。简单来说就是把内存中的所有数据都记录到磁盘中。当Redis实例故障重启后，从磁盘读取快照文件，恢复数据。快照文件称为RDB文件，默认是保存在当前运行目录
+
+
+
+#### 4-1-1-1-执行时机
+
+RDB持久化在四种情况下会执行：
+
+- 执行save命令
+- 执行bgsave命令
+- Redis停机时
+- 触发RDB条件时
+
+1）save命令
+
+执行下面的命令，可以立即执行一次RDB：
+
+![image-20250520105215508](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250520105215508.png)
+
+save命令会导致主进程执行RDB，这个过程中其它所有命令都会被阻塞。只有在数据迁移时可能用到
+
+2）bgsave命令
+
+下面的命令可以异步执行RDB：
+
+![image-20250520105244151](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250520105244151.png)
+
+这个命令执行后会开启独立进程完成RDB，主进程可以持续处理用户请求，不受影响
+
+3）停机时
+
+Redis停机时会执行一次save命令，实现RDB持久化
+
+4）触发RDB条件
+
+Redis内部有触发RDB的机制，可以在redis.conf文件中找到，格式如下：
+
+```properties
+# 900秒内，如果至少有1个key被修改，则执行bgsave ， 如果是save "" 则表示禁用RDB
+save 900 1  
+save 300 10  
+save 60 10000 
+```
+
+RDB的其它配置也可以在redis.conf文件中设置：
+
+```properties
+# 是否压缩 ,建议不开启，压缩也会消耗cpu，磁盘的话不值钱
+rdbcompression yes
+
+# RDB文件名称
+dbfilename dump.rdb  
+
+# 文件保存的路径目录
+dir ./ 
+```
+
+
+
+#### 4-1-1-2-RDB原理
+
+bgsave开始时会fork主进程得到子进程，子进程共享主进程的内存数据。完成fork后读取内存数据并写入 RDB 文件。
+
+fork采用的是copy-on-write技术：
+
+- 当主进程执行读操作时，访问共享内存
+- 当主进程执行写操作时，则会拷贝一份数据，执行写操作
+
+![image-20250520105352208](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250520105352208.png)
+
+
+
+### 4-1-2-AOF持久化
+
+#### 4-1-2-1-AOF原理
+
+AOF全称为Append Only File（追加文件）。Redis处理的每一个写命令都会记录在AOF文件，可以看做是命令日志文件
+
+![image-20250520110956947](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250520110956947.png)
+
+
+
+#### 4-1-2-2-AOF配置
+
+AOF默认是关闭的，需要修改redis.conf配置文件来开启AOF：
+
+```properties
+# 是否开启AOF功能，默认是no
+appendonly yes
+# AOF文件的名称
+appendfilename "appendonly.aof"
+```
+
+
+
+AOF的命令记录的频率也可以通过redis.conf文件来配：
+
+```properties
+# 表示每执行一次写命令，立即记录到AOF文件
+appendfsync always 
+# 写命令执行完先放入AOF缓冲区，然后表示每隔1秒将缓冲区数据写到AOF文件，是默认方案
+appendfsync everysec 
+# 写命令执行完先放入AOF缓冲区，由操作系统决定何时将缓冲区内容写回磁盘
+appendfsync no
+```
+
+
+
+三种策略对比：
+
+![image-20250520111038477](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250520111038477.png)
+
+
+
+#### 4-1-2-3-AOF文件重写
+
+因为是记录命令，AOF文件会比RDB文件大的多。而且AOF会记录对同一个key的多次写操作，但只有最后一次写操作才有意义。通过执行bgrewriteaof命令，可以让AOF文件执行重写功能，用最少的命令达到相同效果
+
+![image-20250520111102580](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250520111102580.png)
+
+如图，AOF原本有三个命令，但是`set num 123 和 set num 666`都是对num的操作，第二次会覆盖第一次的值，因此第一个命令记录下来没有意义。
+
+所以重写命令后，AOF文件内容就是：`mset name jack num 666`
+
+
+
+Redis也会在触发阈值时自动去重写AOF文件。阈值也可以在redis.conf中配置：
+
+```properties
+# AOF文件比上次文件 增长超过多少百分比则触发重写
+auto-aof-rewrite-percentage 100
+# AOF文件体积最小多大以上才触发重写 
+auto-aof-rewrite-min-size 64mb 
+```
+
+
+
+### 4-1-3-RDB与AOF对比
+
+RDB和AOF各有自己的优缺点，如果对数据安全性要求较高，在实际开发中往往会**结合**两者来使用
+
+![image-20250520111143599](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250520111143599.png)
+
+
+
+## 4-2-Redis主从
+
+单节点Redis的并发能力是有上限的，要进一步提高Redis的并发能力，就需要搭建主从集群，实现读写分离
+
+![image-20250521131017399](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250521131017399.png)
+
+
+
+### 4-2-1-主从搭建示例
+
+要在同一台虚拟机开启3个实例，必须准备三份不同的配置文件和目录，配置文件所在目录也就是工作目录
+
+1）创建目录
+
+我们创建三个文件夹，名字分别叫7001、7002、7003：
+
+```sh
+# 进入/tmp目录
+cd /tmp
+# 创建目录
+mkdir 7001 7002 7003
+```
+
+2）恢复原始配置
+
+修改redis-6.2.4/redis.conf文件，将其中的持久化模式改为默认的RDB模式，AOF保持关闭状态
+
+```properties
+# 开启RDB
+# save ""
+save 3600 1
+save 300 100
+save 60 10000
+
+# 关闭AOF
+appendonly no
+```
+
+3）拷贝配置文件到每个实例目录
+
+然后将redis-6.2.4/redis.conf文件拷贝到三个目录中（在/tmp目录执行下列命令）：
+
+```sh
+# 方式一：逐个拷贝
+cp redis-6.2.4/redis.conf 7001
+cp redis-6.2.4/redis.conf 7002
+cp redis-6.2.4/redis.conf 7003
+
+# 方式二：管道组合命令，一键拷贝
+echo 7001 7002 7003 | xargs -t -n 1 cp redis-6.2.4/redis.conf
+```
+
+4）修改每个实例的端口、工作目录
+
+修改每个文件夹内的配置文件，将端口分别修改为7001、7002、7003，将rdb文件保存位置都修改为自己所在目录（在/tmp目录执行下列命令）：
+
+```sh
+sed -i -e 's/6379/7001/g' -e 's/dir .\//dir \/tmp\/7001\//g' 7001/redis.conf
+sed -i -e 's/6379/7002/g' -e 's/dir .\//dir \/tmp\/7002\//g' 7002/redis.conf
+sed -i -e 's/6379/7003/g' -e 's/dir .\//dir \/tmp\/7003\//g' 7003/redis.conf
+```
+
+5）修改每个实例的声明IP
+
+虚拟机本身有多个IP，为了避免将来混乱，我们需要在redis.conf文件中指定每一个实例的绑定ip信息，格式如下：
+
+```properties
+# redis实例的声明 IP
+replica-announce-ip 192.168.150.101
+```
+
+每个目录都要改，我们一键完成修改（在/tmp目录执行下列命令）：
+
+```sh
+# 逐一执行
+sed -i '1a replica-announce-ip 192.168.150.101' 7001/redis.conf
+sed -i '1a replica-announce-ip 192.168.150.101' 7002/redis.conf
+sed -i '1a replica-announce-ip 192.168.150.101' 7003/redis.conf
+
+# 或者一键修改
+printf '%s\n' 7001 7002 7003 | xargs -I{} -t sed -i '1a replica-announce-ip 192.168.150.101' {}/redis.conf
+```
+
+6）开启主从关系
+
+现在三个实例还没有任何关系，要配置主从可以使用replicaof 或者slaveof（5.0以前）命令。
+
+有临时和永久两种模式：
+
+- 修改配置文件（永久生效）
+
+    - 在redis.conf中添加一行配置：```slaveof <masterip> <masterport>```
+
+- 使用redis-cli客户端连接到redis服务，执行slaveof命令（重启后失效）：
+
+    ```sh
+    slaveof <masterip> <masterport>
+    ```
+
+通过redis-cli命令连接7002，执行下面命令：
+
+```sh
+# 连接 7002
+redis-cli -p 7002
+# 执行slaveof
+slaveof 192.168.150.101 7001
+```
+
+通过redis-cli命令连接7003，执行下面命令：
+
+```sh
+# 连接 7003
+redis-cli -p 7003
+# 执行slaveof
+slaveof 192.168.150.101 7001
+```
+
+然后连接 7001节点，查看集群状态：
+
+```sh
+# 连接 7001
+redis-cli -p 7001
+# 查看状态
+info replication
+```
+
+7）启动
+
+为了方便查看日志，我们打开3个ssh窗口，分别启动3个redis实例，启动命令：
+
+```sh
+# 第1个
+redis-server 7001/redis.conf
+# 第2个
+redis-server 7002/redis.conf
+# 第3个
+redis-server 7003/redis.conf
+```
+
+
+
+### 4-2-2-主从数据同步原理
+
+#### 4-2-2-1-全量同步
+
+主从第一次建立连接时，会执行**全量同步**，将master节点的所有数据都拷贝给slave节点，流程：
+
+![image-20250521132200906](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250521132200906.png)
+
+master如何得知salve是第一次来连接呢？？
+
+有几个概念，可以作为判断依据：
+
+- **Replication Id**：简称replid，是数据集的标记，id一致则说明是同一数据集。每一个master都有唯一的replid，slave则会继承master节点的replid
+- **offset**：偏移量，随着记录在repl_baklog中的数据增多而逐渐增大。slave完成同步时也会记录当前同步的offset。如果slave的offset小于master的offset，说明slave数据落后于master，需要更新。
+
+因此slave做数据同步，必须向master声明自己的replication id 和offset，master才可以判断到底需要同步哪些数据
+
+
+
+因为slave原本也是一个master，有自己的replid和offset，当第一次变成slave，与master建立连接时，发送的replid和offset是自己的replid和offset。
+
+master判断发现slave发送来的replid与自己的不一致，说明这是一个全新的slave，就知道要做全量同步了。
+
+master会将自己的replid和offset都发送给这个slave，slave保存这些信息。以后slave的replid就与master一致了。
+
+因此，**master判断一个节点是否是第一次同步的依据，就是看replid是否一致**。
+
+如图：
+
+![image-20250521132657498](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250521132657498.png)
+
+完整流程描述：
+
+- slave节点请求增量同步
+- master节点判断replid，发现不一致，拒绝增量同步
+- master将完整内存数据生成RDB，发送RDB到slave
+- slave清空本地数据，加载master的RDB
+- master将RDB期间的命令记录在repl_baklog，并持续将log中的命令发送给slave
+- slave执行接收到的命令，保持与master之间的同步
+
+
+
+#### 4-2-2-2-增量同步
+
+全量同步需要先做RDB，然后将RDB文件通过网络传输个slave，成本太高了。因此除了第一次做全量同步，其它大多数时候slave与master都是做**增量同步**。
+
+什么是增量同步？就是只更新slave与master存在差异的部分数据。如图：
+
+![image-20250521161902242](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250521161902242.png)
+
+
+
+#### 4-2-2-3-repl_backlog原理
+
+这个文件是一个固定大小的数组，只不过数组是环形，也就是说**角标到达数组末尾后，会再次从0开始读写**，这样数组头部的数据就会被覆盖。
+
+repl_baklog中会记录Redis处理过的命令日志及offset，包括master当前的offset，和slave已经拷贝到的offset：
+
+![image-20250521162208969](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250521162208969.png)
+
+slave与master的offset之间的差异，就是salve需要增量拷贝的数据了。
+
+随着不断有数据写入，master的offset逐渐变大，slave也不断的拷贝，追赶master的offset：
+
+![image-20250521162226089](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250521162226089.png)
+
+直到数组被填满：
+
+![image-20250521162236641](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250521162236641.png)
+
+此时，如果有新的数据写入，就会覆盖数组中的旧数据。不过，旧的数据只要是绿色的，说明是已经被同步到slave的数据，即便被覆盖了也没什么影响。因为未同步的仅仅是红色部分。
+
+
+
+但是，如果slave出现网络阻塞，导致master的offset远远超过了slave的offset： 
+
+![image-20250521162254197](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250521162254197.png)
+
+如果master继续写入新数据，其offset就会覆盖旧的数据，直到将slave现在的offset也覆盖：
+
+![image-20250521162311328](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250521162311328.png)
+
+棕色框中的红色部分，就是尚未同步，但是却已经被覆盖的数据。此时如果slave恢复，需要同步，却发现自己的offset都没有了，无法完成增量同步了。只能做全量同步。
+
+
+
+### 4-2-3-主从同步优化
+
+- 在master中配置repl-diskless-sync yes启用无磁盘复制，避免全量同步时的磁盘IO。
+- Redis单节点上的内存占用不要太大，减少RDB导致的过多磁盘IO
+- 适当提高repl_baklog的大小，发现slave宕机时尽快实现故障恢复，尽可能避免全量同步
+- 限制一个master上的slave节点数量，如果实在是太多slave，则可以采用主-从-从链式结构，减少master压力
+
+主从从架构图：
+
+![image-20250521162814585](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250521162814585.png)
+
+
+
+## 4-3-Redis哨兵
+
+### 4-3-1-哨兵搭建示例
+
+这里我们搭建一个三节点形成的Sentinel集群，来监管之前的Redis主从集群。如图：
+
+![image-20250521164535282](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250521164535282.png)
+
+三个sentinel实例信息如下：
+
+| 节点 |       IP        | PORT  |
+| ---- | :-------------: | :---: |
+| s1   | 192.168.150.101 | 27001 |
+| s2   | 192.168.150.101 | 27002 |
+| s3   | 192.168.150.101 | 27003 |
+
+1）创建目录
+
+要在同一台虚拟机开启3个实例，必须准备三份不同的配置文件和目录，配置文件所在目录也就是工作目录。
+
+我们创建三个文件夹，名字分别叫s1、s2、s3：
+
+```sh
+# 进入/tmp目录
+cd /tmp
+# 创建目录
+mkdir s1 s2 s3
+```
+
+2）配置信息，然后我们在s1目录创建一个sentinel.conf文件，添加下面的内容：
+
+```ini
+port 27001
+sentinel announce-ip 192.168.150.101
+sentinel monitor mymaster 192.168.150.101 7001 2
+sentinel down-after-milliseconds mymaster 5000
+sentinel failover-timeout mymaster 60000
+dir "/tmp/s1"
+```
+
+解读：
+
+- `port 27001`：是当前sentinel实例的端口
+- `sentinel monitor mymaster 192.168.150.101 7001 2`：指定主节点信息
+    - `mymaster`：主节点名称，自定义，任意写
+    - `192.168.150.101 7001`：主节点的ip和端口
+    - `2`：选举master时的quorum值
+
+然后将s1/sentinel.conf文件拷贝到s2、s3两个目录中（在/tmp目录执行下列命令）：
+
+```sh
+# 方式一：逐个拷贝
+cp s1/sentinel.conf s2
+cp s1/sentinel.conf s3
+# 方式二：管道组合命令，一键拷贝
+echo s2 s3 | xargs -t -n 1 cp s1/sentinel.conf
+```
+
+修改s2、s3两个文件夹内的配置文件，将端口分别修改为27002、27003：
+
+```sh
+sed -i -e 's/27001/27002/g' -e 's/s1/s2/g' s2/sentinel.conf
+sed -i -e 's/27001/27003/g' -e 's/s1/s3/g' s3/sentinel.conf
+```
+
+3）启动，为了方便查看日志，我们打开3个ssh窗口，分别启动3个redis实例，启动命令：
+
+```sh
+# 第1个
+redis-sentinel s1/sentinel.conf
+# 第2个
+redis-sentinel s2/sentinel.conf
+# 第3个
+redis-sentinel s3/sentinel.conf
+```
+
+
+
+### 4-3-2-哨兵原理
+
+#### 4-3-2-1-集群结构和作用
+
+哨兵的结构如图：
+
+![image-20250521163252119](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250521163252119.png)
+
+哨兵的作用如下：
+
+- **监控**：Sentinel 会不断检查您的master和slave是否按预期工作
+- **自动故障恢复**：如果master故障，Sentinel会将一个slave提升为master。当故障实例恢复后也以新的master为主
+- **通知**：Sentinel充当Redis客户端的服务发现来源，当集群发生故障转移时，会将最新信息推送给Redis的客户端
+
+
+
+#### 4-3-2-2-集群监控原理
+
+Sentinel基于心跳机制监测服务状态，每隔1秒向集群的每个实例发送ping命令：
+
+•主观下线：如果某sentinel节点发现某实例未在规定时间响应，则认为该实例**主观下线**
+
+•客观下线：若超过指定数量（quorum）的sentinel都认为该实例主观下线，则该实例**客观下线**。quorum值最好超过Sentinel实例数量的一半
+
+![image-20250521163326307](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250521163326307.png)
+
+
+
+#### 4-3-2-3-集群故障恢复原理
+
+一旦发现master故障，sentinel需要在salve中选择一个作为新的master，选择依据是这样的：
+
+- 首先会判断slave节点与master节点断开时间长短，如果超过指定值（down-after-milliseconds * 10）则会排除该slave节点
+- 然后判断slave节点的slave-priority值，越小优先级越高，如果是0则永不参与选举
+- 如果slave-prority一样，则判断slave节点的offset值，越大说明数据越新，优先级越高
+- 最后是判断slave节点的运行id大小，越小优先级越高。
+
+
+
+当选出一个新的master后，该如何实现切换呢？
+
+流程如下：
+
+- sentinel给备选的slave1节点发送slaveof no one命令，让该节点成为master
+- sentinel给所有其它slave发送slaveof 192.168.150.101 7002 命令，让这些slave成为新master的从节点，开始从新的master上同步数据。
+- 最后，sentinel将故障节点标记为slave，当故障节点恢复后会自动成为新的master的slave节点
+
+![image-20250521163359318](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250521163359318.png)
+
+
+
+## 4-4-Redis分片集群
+
+主从和哨兵可以解决高可用、高并发读的问题。但是依然有两个问题没有解决：
+
+- 海量数据存储问题
+
+- 高并发写的问题
+
+使用分片集群可以解决上述问题，如图:
+
+![image-20250521170223519](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250521170223519.png)
+
+分片集群特征：
+
+- 集群中有多个master，每个master保存不同数据
+
+- 每个master都可以有多个slave节点
+
+- master之间通过ping监测彼此健康状态
+
+- 客户端请求可以访问集群任意节点，最终都会被转发到正确节点
+
+
+
+### 4-4-1-分片集群搭建示例
+
+分片集群需要的节点数量较多，这里我们搭建一个最小的分片集群，包含3个master节点，每个master包含一个slave节点，结构如下：
+
+![image-20250521170316154](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250521170316154.png)
+
+这里我们会在同一台虚拟机中开启6个redis实例，模拟分片集群，信息如下：
+
+|       IP        | PORT |  角色  |
+| :-------------: | :--: | :----: |
+| 192.168.150.101 | 7001 | master |
+| 192.168.150.101 | 7002 | master |
+| 192.168.150.101 | 7003 | master |
+| 192.168.150.101 | 8001 | slave  |
+| 192.168.150.101 | 8002 | slave  |
+| 192.168.150.101 | 8003 | slave  |
+
+
+
+1）准备实例和配置
+
+删除之前的7001、7002、7003这几个目录，重新创建出7001、7002、7003、8001、8002、8003目录：
+
+```sh
+# 进入/tmp目录
+cd /tmp
+# 删除旧的，避免配置干扰
+rm -rf 7001 7002 7003
+# 创建目录
+mkdir 7001 7002 7003 8001 8002 8003
+```
+
+在/tmp下准备一个新的redis.conf文件，内容如下：
+
+```ini
+port 6379
+# 开启集群功能
+cluster-enabled yes
+# 集群的配置文件名称，不需要我们创建，由redis自己维护
+cluster-config-file /tmp/6379/nodes.conf
+# 节点心跳失败的超时时间
+cluster-node-timeout 5000
+# 持久化文件存放目录
+dir /tmp/6379
+# 绑定地址
+bind 0.0.0.0
+# 让redis后台运行
+daemonize yes
+# 注册的实例ip
+replica-announce-ip 192.168.150.101
+# 保护模式
+protected-mode no
+# 数据库数量
+databases 1
+# 日志
+logfile /tmp/6379/run.log
+```
+
+将这个文件拷贝到每个目录下：
+
+```sh
+# 进入/tmp目录
+cd /tmp
+# 执行拷贝
+echo 7001 7002 7003 8001 8002 8003 | xargs -t -n 1 cp redis.conf
+```
+
+修改每个目录下的redis.conf，将其中的6379修改为与所在目录一致：
+
+```sh
+# 进入/tmp目录
+cd /tmp
+# 修改配置文件
+printf '%s\n' 7001 7002 7003 8001 8002 8003 | xargs -I{} -t sed -i 's/6379/{}/g' {}/redis.conf
+```
+
+2）启动
+
+因为已经配置了后台启动模式，所以可以直接启动服务：
+
+```sh
+# 进入/tmp目录
+cd /tmp
+# 一键启动所有服务
+printf '%s\n' 7001 7002 7003 8001 8002 8003 | xargs -I{} -t redis-server {}/redis.conf
+```
+
+3）创建集群
+
+虽然服务启动了，但是目前每个服务之间都是独立的，没有任何关联。
+
+我们需要执行命令来创建集群，在Redis5.0之前创建集群比较麻烦，5.0之后集群管理命令都集成到了redis-cli中。
+
+
+
+1）Redis5.0之前
+
+Redis5.0之前集群命令都是用redis安装包下的src/redis-trib.rb来实现的。因为redis-trib.rb是有ruby语言编写的所以需要安装ruby环境。
+
+ ```sh
+# 安装依赖
+yum -y install zlib ruby rubygems
+gem install redis
+ ```
+
+
+
+然后通过命令来管理集群：
+
+```sh
+# 进入redis的src目录
+cd /tmp/redis-6.2.4/src
+# 创建集群
+./redis-trib.rb create --replicas 1 192.168.150.101:7001 192.168.150.101:7002 192.168.150.101:7003 192.168.150.101:8001 192.168.150.101:8002 192.168.150.101:8003
+```
+
+
+
+2）Redis5.0以后
+
+我们使用的是Redis6.2.4版本，集群管理以及集成到了redis-cli中，格式如下：
+
+```sh
+redis-cli --cluster create --cluster-replicas 1 192.168.150.101:7001 192.168.150.101:7002 192.168.150.101:7003 192.168.150.101:8001 192.168.150.101:8002 192.168.150.101:8003
+```
+
+命令说明：
+
+- `redis-cli --cluster`或者`./redis-trib.rb`：代表集群操作命令
+- `create`：代表是创建集群
+- `--replicas 1`或者`--cluster-replicas 1` ：指定集群中每个master的副本个数为1，此时`节点总数 ÷ (replicas + 1)` 得到的就是master的数量。因此节点列表中的前n个就是master，其它节点都是slave节点，随机分配到不同master
+
+
+
+### 4-4-2-散列插槽
+
+Redis会把每一个master节点映射到0~16383共16384个插槽（hash slot）上，查看集群信息时就能看到：
+
+![image-20250521171251157](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250521171251157.png)
+
+数据key不是与节点绑定，而是与插槽绑定。redis会根据key的有效部分计算插槽值，分两种情况：
+
+- key中包含"{}"，且“{}”中至少包含1个字符，“{}”中的部分是有效部分
+- key中不包含“{}”，整个key都是有效部分
+
+例如：key是num，那么就根据num计算，如果是{itcast}num，则根据itcast计算。计算方式是利用CRC16算法得到一个hash值，然后对16384取余，得到的结果就是slot值
+
+![image-20250521171313185](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250521171313185.png)
+
+如图，在7001这个节点执行set a 1时，对a做hash运算，对16384取余，得到的结果是15495，因此要存储到103节点。
+
+到了7003后，执行`get num`时，对num做hash运算，对16384取余，得到的结果是2765，因此需要切换到7001节点
