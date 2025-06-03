@@ -1,17 +1,22 @@
 # 1-什么是 Redis
 
-- Redis是一个基于 C 语言开发的开源 <font color="red">NoSQL</font> 数据库
-- Redis 的数据是保存在<font color="red">内存</font>中的（内存数据库，支持持久化），因此读写速度非常快
-- Redis 存储的是 KV <font color="red">键值对</font>数据
-- 为了满足不同的业务场景，Redis 内置了<font color="red">多种数据类型</font>实现
+定义->优点->使用场景
+
+- Redis是一个基于 C 语言开发的开源 <font color="red">NoSQL</font> 数据库，存储的是 KV <font color="red">键值对</font>数据
+- Redis 的数据是保存在<font color="red">内存</font>中的（内存数据库，支持持久化），因此读写速度非常快，广泛用于缓存
+- 使用场景：
+    - 用于缓存
+    - 用来做<font color="red">分布式锁</font>
+    - 为了满足不同的业务场景，Redis 内置了<font color="red">多种数据类型</font>实现
 
 
 
-**为什么Redis这么快**
+# 2-单线程的Redis为什么这么快
 
-- Redis 基于<font color="red">内存</font>，内存的访问速度比磁盘快很多
-- Redis 基于 Reactor 模式设计开发了一套高效的<font color="red">事件处理模型</font>，主要是单线程事件循环和 IO 多路复用
-- Redis 内置了多种<font color="red">优化</font>过后的数据类型/结构实现，性能非常高
+- Redis 数据读写是在<font color="red">内存</font>中，数据的读写操作快
+- 单线程避免了锁竞争和线程切换带来的<font color="red">性能损耗</font>，处理简单高效
+- 高效的<font color="red">数据结构</font>，Redis 内部使用的是优化后的数据结构
+- 采用<font color="red">单线程事件循环和非阻塞 I/O 多路复用</font>机制
 - Redis <font color="red">通信协议</font>实现简单且解析高效
 
 
@@ -286,7 +291,7 @@ Redis的过期删除策略是：惰性删除 + 定期删除两种策略配合使
 
 ## 5-1-惰性删除
 
-- 在设置该key过期时间后，不去管它。当需要该key时，我们检查其是否过期。如果过期，我们就删掉它；反之，返回该key
+- 定义：key过期之后，不会马上被删除掉。当需要该key时，我们检查其是否过期，如果过期，我们就删掉它；反之，返回该key
 - 优点：对<font color="red">CPU友好</font>，只会在使用key时才会进行过期检查，对于很多用不到的key不用浪费时间进行过期检查
 - 缺点：对<font color="red">内存不友好</font>，如果一个key已经过期，但是一直没有使用，那么该key就会一直存在内存中
 
@@ -294,7 +299,7 @@ Redis的过期删除策略是：惰性删除 + 定期删除两种策略配合使
 
 ## 5-2-定期删除
 
-- 每隔一段时间，就对一些key进行检查，并删除里面过期的key
+- 定义：每隔一段时间，就对一些key进行检查，并删除里面过期的key
 - 定期清理的两种模式
     - SLOW模式，是定时任务，执行频率默认为10hz，每次不超过25ms，可以通过修改配置文件redis.conf的hz选项来调整这个次数
     -  FAST模式，执行频率不固定，每次事件循环会尝试执行，但两次间隔不低于2ms，每次耗时不超过1ms
@@ -303,7 +308,7 @@ Redis的过期删除策略是：惰性删除 + 定期删除两种策略配合使
 
 
 
-# 6-Redis 的数据淘汰策略
+# 6-Redis 的数据淘汰策略（保证哪些是热点数据）
 
 ![image-20250523163617459](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250523163617459.png)
 
@@ -395,11 +400,18 @@ Redis 共有 5 种基本数据类型：String（字符串）、List（列表）�
 
 ### 9-1-1-String
 
-- String 是一种二进制安全的数据类型，可以用来<font color="red">存储任何类型的数据</font>，比如字符串、整数、浮点数、图片（图片的 base64 编码或者解码或者图片的路径）、序列化后的对象
+定义->优点
 
--  Redis 并没有使用 C 的字符串表示，而是自己构建了一种<font color="red">简单动态字符串</font>（Simple Dynamic String，**SDS**）。相比于 C 的原生字符串，Redis 的 SDS 不光可以保存文本数据还可以保存二进制数据，并且<font color="red">获取字符串长度复杂度</font>为 O(1)（C 字符串为 O(N)）,除此之外，Redis 的 SDS API 是安全的，不会造成<font color="red">缓冲区溢出</font>
+- Redis 并没有使用 C 的字符串表示，而是自己构建了一种<font color="red">简单动态字符串</font>（Simple Dynamic String，**SDS**）
 
-    
+- 优点：
+
+    - String 是一种<font color="red">二进制安全</font>的数据类型，可以用来<font color="red">存储任何类型的数据</font>
+
+    - <font color="red">获取字符串长度复杂度</font>为 O(1)（C 字符串为 O(N)）
+    - Redis 的 SDS API 是安全的，不会造成<font color="red">缓冲区溢出</font>
+
+     
 
 ### 9-1-2-List
 
@@ -506,9 +518,13 @@ Redis 中有一个叫做 `Sorted Set`（有序集合）的数据类型经常被�
 
 
 
-# 10- Redis集群方案
+- 
 
-## 10-1-主从复制
+
+
+# 11- Redis集群方案
+
+## 11-1-主从复制
 
 单节点Redis的并发能力是有上限的，要进一步提高Redis的并发能力，就需要搭建主从集群，实现读写分离
 
@@ -516,9 +532,9 @@ Redis 中有一个叫做 `Sorted Set`（有序集合）的数据类型经常被�
 
 
 
-### 10-1-1-主从数据同步原理
+### 11-1-1-主从数据同步原理
 
-#### 10-1-1-1-全量同步
+#### 11-1-1-1-全量同步
 
 ![image-20250521132657498](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250521132657498.png)
 
@@ -533,13 +549,13 @@ Redis 中有一个叫做 `Sorted Set`（有序集合）的数据类型经常被�
 
 
 
-#### 10-1-1-2-增量同步
+#### 11-1-1-2-增量同步
 
 ![image-20250521161902242](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250521161902242.png)
 
 
 
-## 10-2-哨兵模式
+## 11-2-哨兵模式
 
 
 
@@ -549,5 +565,5 @@ Redis 中有一个叫做 `Sorted Set`（有序集合）的数据类型经常被�
 
 
 
-## 10-3-分片集群
+## 11-3-分片集群
 
