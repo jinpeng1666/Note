@@ -16,9 +16,9 @@
 
 # 2-延迟加载
 
-## 2-1-MyBatis是否支持延迟加载
+## 2-1- MyBatis 是否支持延迟加载
 
-Mybatis支持一对一关联对象和一对多关联对象的延迟加载，但默认没有开启，在 MyBatis 配置文件中，可以配置是否启用延迟加载 `lazyLoadingEnabled=true|false`
+Mybatis支持<font color="red">一对一关联对象和一对多关联对象</font>的延迟加载，但默认没有开启，在 MyBatis 配置文件中，可以配置是否启用延迟加载 `lazyLoadingEnabled=true|false`
 
 ![image-20250514163229582](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250514163229582.png)
 
@@ -28,19 +28,19 @@ Mybatis支持一对一关联对象和一对多关联对象的延迟加载，但�
 
 ![image-20250514164041123](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250514164041123.png)
 
-1. 使用CGLIB创建目标对象的<font color="red">代理对象</font>
+1. 使用 CGLIB 创建目标对象的<font color="red">代理对象</font>
 2. 当调用<font color="red">目标方法</font>时，进入拦截器invoke方法，发现是null值，执行sql查询
 3. 把查询出来的结果，赋值到对象的属性中
 
 
 
-# 3-Mybatis的一级、二级缓存用过吗
+# 3- Mybatis 的一级、二级缓存用过吗
 
 ![image-20250514164430372](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250514164430372.png)
 
-- 本地缓存，基于<font color="red">PerpetualCache</font> (/pəˈpetʃuəl/)，本质是一个HashMap
-- 一级缓存：<font color="red">作用域</font>是session级别
-- 二级缓存：作用域是namespace和mapper的作用域，不依赖于session
+- 本地缓存，基于 <font color="red">PerpetualCache</font> (/pəˈpetʃuəl/)，本质是一个HashMap
+- 一级缓存：<font color="red">作用域</font>是 session 级别
+- 二级缓存：作用域是 namespace 和 mapper 的作用域，不依赖于session
 
 
 
@@ -82,7 +82,7 @@ Mybatis支持一对一关联对象和一对多关联对象的延迟加载，但�
 
 
 
-# 5-xml 映射文件中有哪些标签
+# 5- xml 映射文件中有哪些标签
 
 增删改查->动态sql->服用片段->结果映射
 
@@ -95,7 +95,7 @@ Mybatis支持一对一关联对象和一对多关联对象的延迟加载，但�
 
 
 
-# 6-Dao 接口的工作原理是什么？Dao 接口里的方法，参数不同时，方法能重载吗？
+# 6- Dao 接口的工作原理是什么？Dao 接口里的方法，参数不同时，方法能重载吗？
 
 - 最佳实践中，通常一个 xml 映射文件，都会写一个 Dao 接口<font color="red">与之对应</font>
 
@@ -109,7 +109,7 @@ Dao 接口里的方法可以重载，但是 Mybatis 的 xml 里面的 ID 不允�
 
 
 
-# 7-MyBatis是如何进行分页的？
+# 7- MyBatis 是如何进行分页的？
 
 - 可以在<font color="red"> sql 内直接书写</font>带有物理分页的参数来完成物理分页功能
-- 可以使用<font color="red">分页插件</font>来完成物理分页
+- 可以使用分页插件 <font color="red">PageHelper</font> 来完成物理分页，通过<font color="red">拦截</font> SQL 并自动添加分页语法（物理分页），同时提供丰富的分页信息（如总记录数、页码等）

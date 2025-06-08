@@ -16,8 +16,6 @@
 
 # 2-注册中心
 
-
-
 ## 2-1-服务注册和发现是什么意思？Spring Cloud 如何实现服务注册发现
 
 ### 2-1-1-Eureka
@@ -214,8 +212,8 @@ limit_req_zone key zone rate
 
 优点：
 
-- 实现简单，易于理解
-- 可以控制限流速率，避免网络拥塞和系统过载
+- 实现<font color="red">简单</font>，易于理解
+- 可以<font color="red">控制限流速率</font>，避免网络拥塞和系统过载
 
 缺点：
 
@@ -295,7 +293,7 @@ BASE理论是对CAP的一种解决思路，包含三个思想：
 
 - Basically Available （<font color="red">基本可用</font>）：分布式系统在出现故障时，允许损失部分可用性，即保证核心可用
 - Soft State（<font color="red">软状态</font>）：在一定时间内，允许出现中间状态，比如临时的不一致状态
-- Eventually Consistent（<font color="red">最终一致性</font>）：虽然无法保证强一致性，但是在软状态结束后，最终达到数据一致。
+- Eventually Consistent（<font color="red">最终一致性</font>）：虽然无法保证强一致性，但是在软状态结束后，最终达到数据一致
 
 
 
