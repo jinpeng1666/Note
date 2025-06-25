@@ -1,4 +1,4 @@
-# 1-聊聊MyBatis的执行流程
+# 1-聊聊 MyBatis 的执行流程
 
 ![image-20250514162605309](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250514162605309.png)
 
@@ -18,7 +18,7 @@
 
 ## 2-1- MyBatis 是否支持延迟加载
 
-Mybatis支持<font color="red">一对一关联对象和一对多关联对象</font>的延迟加载，但默认没有开启，在 MyBatis 配置文件中，可以配置是否启用延迟加载 `lazyLoadingEnabled=true|false`
+Mybatis 支持<font color="red">一对一关联对象和一对多关联对象</font>的延迟加载，但默认没有开启，在 MyBatis 配置文件中，可以配置是否启用延迟加载 `lazyLoadingEnabled=true|false`
 
 ![image-20250514163229582](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250514163229582.png)
 
@@ -84,7 +84,7 @@ Mybatis支持<font color="red">一对一关联对象和一对多关联对象</fo
 
 # 5- xml 映射文件中有哪些标签
 
-增删改查->动态sql->服用片段->结果映射
+==增删改查 -> 动态sql -> 复用片段 -> 结果映射==
 
 | 类别     | 标签名                                                       | 说明                               |
 | -------- | ------------------------------------------------------------ | ---------------------------------- |

@@ -21,7 +21,7 @@ Spring框架中的bean默认是单例的
 
 ![image-20250512110232104](https://picgo-zjp.oss-cn-shenzhen.aliyuncs.com/image-20250512110232104.png)
 
-- singleton : bean在每个Spring IOC容器中只有一个实例
+- singleton：bean在每个Spring IOC容器中只有一个实例
 
 - prototype：一个bean的定义可以有多个实例
 
@@ -133,6 +133,8 @@ Spring 时代我们一般通过 XML 文件来配置 Bean，后来开发人员觉
 
 
 ## 9-1- @Autowired 和 @Resource 的区别是什么
+
+==谁提供的 -> 注入方式 -> 接口多个实现类 -> 使用范围==
 
 - `@Autowired` 是 Spring <font color="red">提供</font>的注解，`@Resource` 是 JDK 提供的注解
 
